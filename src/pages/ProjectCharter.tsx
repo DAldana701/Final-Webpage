@@ -70,7 +70,7 @@ const ProjectCharter = () => {
       <ProjectHeader />
       
       {/* Sticky Navigation */}
-      <nav className="sticky top-0 z-40 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
+      <nav className="sticky top-[88px] z-40 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
         <div className="container mx-auto px-6 py-3">
           <div className="flex gap-2 overflow-x-auto scrollbar-hide">
             {navItems.map((item) => (
