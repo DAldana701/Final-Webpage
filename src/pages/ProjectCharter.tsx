@@ -41,12 +41,15 @@ const ProjectCharter = () => {
   };
 
   const stakeholders = [
-    { name: "Family", category: "External", role: "Provide motivation and support", power: "Low", interest: "High", strategy: "Weekly updates" },
-    { name: "Friends", category: "External", role: "Share workplace insights", power: "Low", interest: "Medium", strategy: "Biweekly discussions" },
-    { name: "Professors", category: "External", role: "Professional feedback and guidance", power: "Medium", interest: "High", strategy: "Weekly reviews" },
-    { name: "Faculty Members", category: "External", role: "Academic support and recommendations", power: "Medium", interest: "Medium", strategy: "Office hours" },
-    { name: "Career Center", category: "External", role: "Resume reviews and job search support", power: "High", interest: "High", strategy: "Multiple appointments" },
-    { name: "Industry Recruiters", category: "External", role: "Job opportunities and insights", power: "High", interest: "Medium", strategy: "Networking events" },
+    { name: "Family", category: "External", role: "Provide motivation and support throughout the project.", power: "Low", interest: "High", strategy: "Weekly progress updates and feedback discussions." },
+    { name: "Friends", category: "External", role: "Share experiences and insights on workplace expectations.", power: "Low", interest: "Medium", strategy: "Biweekly progress discussions and informal feedback." },
+    { name: "Professors", category: "External", role: "Offer professional feedback on documents and guidance on career direction.", power: "Medium", interest: "High", strategy: "Weekly or biweekly reviews and mentorship sessions." },
+    { name: "Hiring Managers", category: "External", role: "Evaluate qualifications and suitability for roles.", power: "High", interest: "High", strategy: "Tailor applications and maintain prompt, professional communication." },
+    { name: "Classmates", category: "External", role: "Provide peer insights and interview preparation support.", power: "Low", interest: "Medium", strategy: "Regular peer feedback and mock interview sessions." },
+    { name: "Clubs (e.g., CARP)", category: "External", role: "Offer exposure to broader professional environments.", power: "Low", interest: "Medium", strategy: "Monthly updates and event participation." },
+    { name: "Professionals (Networking Events)", category: "External", role: "Provide career advice, feedback, and mentorship.", power: "Medium", interest: "High", strategy: "Build and sustain relationships through follow-ups and LinkedIn engagement." },
+    { name: "ISC2", category: "Regulatory", role: "Guide certification preparation and maintain standards.", power: "High", interest: "Low", strategy: "Follow certification procedures and resource guidelines." },
+    { name: "Career Counselors", category: "External", role: "Offer guidance, review documents, and share networking opportunities.", power: "Medium", interest: "Medium", strategy: "Engage in periodic advising and career planning sessions." },
   ];
 
   const navItems = [
@@ -264,28 +267,29 @@ const ProjectCharter = () => {
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-success/5 border-l-4 border-success rounded-lg p-6 hover:shadow-md transition-shadow">
                     <h4 className="text-lg font-semibold text-success mb-4 flex items-center gap-2">
-                      ✅ In Scope
+                      ✅ In Scope for Semester Project
                     </h4>
-                    <ul className="space-y-2 text-sm text-foreground/80">
-                      <li className="flex gap-2"><span>•</span><span>Self-assessments</span></li>
-                      <li className="flex gap-2"><span>•</span><span>Career Center resources</span></li>
-                      <li className="flex gap-2"><span>•</span><span>Stakeholder feedback</span></li>
-                      <li className="flex gap-2"><span>•</span><span>Tailored applications</span></li>
-                      <li className="flex gap-2"><span>•</span><span>Coursework review</span></li>
-                      <li className="flex gap-2"><span>•</span><span>3+ informational interviews</span></li>
+                    <ul className="space-y-2 text-foreground/90">
+                      <li className="flex gap-2"><span>•</span><span>Conduct self-assessments of academic and professional skills</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Utilize CSULA Career Center resources for resume reviews, interview preparation, and job search support</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Engage with faculty, students, and professionals for feedback and guidance</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Tailor resumes, cover letters, and application materials for specific job postings</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Review relevant coursework to identify and showcase applicable skills</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Research organizations to understand business values, culture, and requirements</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Conduct at least three informational interviews and establish a minimum of two new professional connections</span></li>
                     </ul>
                   </div>
 
                   <div className="bg-primary/5 border-l-4 border-primary rounded-lg p-6 hover:shadow-md transition-shadow">
                     <h4 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
-                      🗺️ Future Roadmap
+                      🗺️ Roadmap Items (Within 6 Months Post-Semester)
                     </h4>
-                    <ul className="space-y-2 text-sm text-foreground/80">
-                      <li className="flex gap-2"><span>•</span><span>Stakeholder follow-ups</span></li>
-                      <li className="flex gap-2"><span>•</span><span>Apply new coursework</span></li>
-                      <li className="flex gap-2"><span>•</span><span>Hands-on cybersecurity</span></li>
-                      <li className="flex gap-2"><span>•</span><span>Professional portfolio</span></li>
-                      <li className="flex gap-2"><span>•</span><span>Pursue internships</span></li>
+                    <ul className="space-y-2 text-foreground/90">
+                      <li className="flex gap-2"><span>•</span><span>Follow up with stakeholders on ongoing career progress</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Apply lessons from new coursework to strengthen technical and professional capabilities</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Continue hands-on learning to reinforce cybersecurity and business concepts</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Develop a professional portfolio (e.g., GitHub projects, personal website)</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Pursue an internship or entry-level position aligned with business and cybersecurity goals</span></li>
                     </ul>
                   </div>
 
@@ -293,11 +297,11 @@ const ProjectCharter = () => {
                     <h4 className="text-lg font-semibold text-destructive mb-4 flex items-center gap-2">
                       ❌ Out of Scope
                     </h4>
-                    <ul className="space-y-2 text-sm text-foreground/80">
-                      <li className="flex gap-2"><span>•</span><span>Mid-senior roles</span></li>
-                      <li className="flex gap-2"><span>•</span><span>High-level certifications</span></li>
-                      <li className="flex gap-2"><span>•</span><span>Two-page resumes</span></li>
-                      <li className="flex gap-2"><span>•</span><span>Out-of-state positions</span></li>
+                    <ul className="space-y-2 text-foreground/90">
+                      <li className="flex gap-2"><span>•</span><span>Applying for mid- to senior-level roles (long-term goal, beyond current project scope)</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Attempting high-level certification during the semester (outside project timeline)</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Developing a two-page "high-level" resume (not feasible within project capacity)</span></li>
+                      <li className="flex gap-2"><span>•</span><span>Applying to out-of-state positions (beyond current logistical limits)</span></li>
                     </ul>
                   </div>
                 </div>
@@ -316,7 +320,7 @@ const ProjectCharter = () => {
                   <CardTitle className="text-2xl">Stakeholder Register</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 space-y-6">
                 <div className="overflow-x-auto rounded-lg border border-border/40">
                   <table className="w-full border-collapse bg-card">
                     <thead>
@@ -326,7 +330,7 @@ const ProjectCharter = () => {
                         <th className="border-b border-border p-4 text-left text-sm font-semibold">Role/Interest</th>
                         <th className="border-b border-border p-4 text-left text-sm font-semibold">Power</th>
                         <th className="border-b border-border p-4 text-left text-sm font-semibold">Interest</th>
-                        <th className="border-b border-border p-4 text-left text-sm font-semibold">Strategy</th>
+                        <th className="border-b border-border p-4 text-left text-sm font-semibold">Engagement Strategy</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -342,6 +346,44 @@ const ProjectCharter = () => {
                       ))}
                     </tbody>
                   </table>
+                </div>
+
+                <div className="bg-card border border-border/40 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-primary mb-4">Power-Interest Grid Summary</h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-success/10 border border-success/30 rounded-lg p-4">
+                      <h5 className="font-semibold text-success mb-2">High Power / Low Interest – Keep Satisfied</h5>
+                      <ul className="text-sm text-foreground/90">
+                        <li>• ISC2</li>
+                      </ul>
+                    </div>
+                    <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-4">
+                      <h5 className="font-semibold text-destructive mb-2">High Power / High Interest – Manage Closely</h5>
+                      <ul className="text-sm text-foreground/90">
+                        <li>• Hiring Managers</li>
+                        <li>• Professors</li>
+                        <li>• Professionals (Networking Events)</li>
+                      </ul>
+                    </div>
+                    <div className="bg-warning/10 border border-warning/30 rounded-lg p-4">
+                      <h5 className="font-semibold text-warning mb-2">Low Power / Low Interest – Monitor</h5>
+                      <ul className="text-sm text-foreground/90">
+                        <li>• Clubs (e.g., CARP)</li>
+                      </ul>
+                    </div>
+                    <div className="bg-primary/10 border border-primary/30 rounded-lg p-4">
+                      <h5 className="font-semibold text-primary mb-2">Low Power / High Interest – Keep Informed</h5>
+                      <ul className="text-sm text-foreground/90">
+                        <li>• Family</li>
+                        <li>• Friends</li>
+                        <li>• Classmates</li>
+                        <li>• Career Counselors</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground text-sm mt-4 leading-relaxed">
+                    Stakeholders vary in influence and engagement level, requiring tailored communication strategies. High-power, high-interest stakeholders (such as hiring managers and professors) will be prioritized for close collaboration and consistent updates. Supportive but lower-power stakeholders (such as family and peers) will receive regular but brief progress communications to sustain motivation and accountability.
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -361,66 +403,71 @@ const ProjectCharter = () => {
               <CardContent className="pt-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-card border-l-4 border-primary rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <h4 className="text-lg font-semibold text-primary mb-2">Job Application Package</h4>
-                    <p className="text-xs text-muted-foreground mb-4">Type: Tangible | Owner: Daniel | Due: Week 6</p>
-                    <div className="space-y-3 text-sm text-foreground/80">
-                      <p><strong>Description:</strong> Professional package with tailored resume, cover letter, and LinkedIn profile.</p>
+                    <h4 className="text-lg font-semibold text-primary mb-2">Job Application Package (Resume Set + Cover Template)</h4>
+                    <p className="text-xs text-muted-foreground mb-4">Type: Tangible | Owner: Daniel | Due: Mid-Semester (Week 8)</p>
+                    <div className="space-y-3 text-sm text-foreground/90">
+                      <p><strong>SMART Description:</strong> Develop two one-page resumes — one focused on general business/CIS and one on cybersecurity — along with a reusable cover letter template tailored to specific target roles.</p>
                       <div>
-                        <strong>Done When:</strong>
-                        <ul className="mt-2 space-y-1 ml-4 text-xs">
-                          <li>• 80%+ positive feedback from Career Center</li>
-                          <li>• Cover letter for 2–3 target roles</li>
-                          <li>• LinkedIn updated with keywords</li>
+                        <strong>Definition of Done:</strong>
+                        <ul className="mt-2 space-y-1 ml-4">
+                          <li>• Final files exported in professional format (PDF).</li>
+                          <li>• Content aligned with at least two to three real job postings.</li>
+                          <li>• Reviewed by a professor or career counselor.</li>
+                          <li>• Includes documented version history (v1 → v2).</li>
                         </ul>
                       </div>
+                      <p className="text-xs text-muted-foreground italic mt-2"><strong>Evidence/Links:</strong> Resume_General.pdf, Resume_Security.pdf, Cover_Template.pdf, feedback notes or screenshots.</p>
                     </div>
                   </div>
 
                   <div className="bg-card border-l-4 border-accent rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <h4 className="text-lg font-semibold text-accent mb-2">Networking Portfolio</h4>
-                    <p className="text-xs text-muted-foreground mb-4">Type: Tangible | Owner: Daniel | Due: Week 10</p>
-                    <div className="space-y-3 text-sm text-foreground/80">
-                      <p><strong>Description:</strong> Professional connections and informational interviews documentation.</p>
+                    <h4 className="text-lg font-semibold text-accent mb-2">Networking Portfolio (Contacts + Informational Interviews)</h4>
+                    <p className="text-xs text-muted-foreground mb-4">Type: Tangible | Owner: Daniel | Due: End of Semester (Week 12)</p>
+                    <div className="space-y-3 text-sm text-foreground/90">
+                      <p><strong>SMART Description:</strong> Build a networking portfolio documenting at least three informational interviews and two new professional LinkedIn connections.</p>
                       <div>
-                        <strong>Done When:</strong>
-                        <ul className="mt-2 space-y-1 ml-4 text-xs">
-                          <li>• 3+ informational interviews completed</li>
-                          <li>• 2+ professional connections added</li>
-                          <li>• Follow-up plan documented</li>
+                        <strong>Definition of Done:</strong>
+                        <ul className="mt-2 space-y-1 ml-4">
+                          <li>• Log includes contact names, organizations, discussion topics, and follow-up actions.</li>
+                          <li>• Reflections recorded for each interview.</li>
+                          <li>• Evidence of connections and interactions captured via screenshots or LinkedIn activity.</li>
                         </ul>
                       </div>
+                      <p className="text-xs text-muted-foreground italic mt-2"><strong>Evidence/Links:</strong> Networking_Log.xlsx (or Google Sheet), interview notes, screenshots.</p>
                     </div>
                   </div>
 
                   <div className="bg-card border-l-4 border-success rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <h4 className="text-lg font-semibold text-success mb-2">Application Submissions</h4>
-                    <p className="text-xs text-muted-foreground mb-4">Type: Tangible | Owner: Daniel | Due: Week 14</p>
-                    <div className="space-y-3 text-sm text-foreground/80">
-                      <p><strong>Description:</strong> Targeted job applications to aligned positions.</p>
+                    <h4 className="text-lg font-semibold text-success mb-2">Application Tracker (Pipeline + Follow-Ups)</h4>
+                    <p className="text-xs text-muted-foreground mb-4">Type: Tangible | Owner: Daniel | Due: Ongoing; Target by Week 12</p>
+                    <div className="space-y-3 text-sm text-foreground/90">
+                      <p><strong>SMART Description:</strong> Maintain an active tracker for at least three targeted job applications, documenting submission details, resume versions used, and follow-up actions.</p>
                       <div>
-                        <strong>Done When:</strong>
-                        <ul className="mt-2 space-y-1 ml-4 text-xs">
-                          <li>• 3–5 applications submitted</li>
-                          <li>• Each with tailored materials</li>
-                          <li>• Application tracker maintained</li>
+                        <strong>Definition of Done:</strong>
+                        <ul className="mt-2 space-y-1 ml-4">
+                          <li>• Each record includes company name, role, submission date, and next action.</li>
+                          <li>• At least one follow-up completed for each open application.</li>
+                          <li>• Weekly updates maintained through project completion.</li>
                         </ul>
                       </div>
+                      <p className="text-xs text-muted-foreground italic mt-2"><strong>Evidence/Links:</strong> Application_Tracker.xlsx (or Monday.com export), screenshots of progress.</p>
                     </div>
                   </div>
 
                   <div className="bg-card border-l-4 border-warning rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <h4 className="text-lg font-semibold text-warning mb-2">Final Report</h4>
-                    <p className="text-xs text-muted-foreground mb-4">Type: Intangible | Owner: Daniel | Due: Week 16</p>
-                    <div className="space-y-3 text-sm text-foreground/80">
-                      <p><strong>Description:</strong> Comprehensive reflection and progress documentation.</p>
+                    <h4 className="text-lg font-semibold text-warning mb-2">Interview Readiness Kit (Q&A Bank + Mock Feedback)</h4>
+                    <p className="text-xs text-muted-foreground mb-4">Type: Tangible | Owner: Daniel | Due: Week 8</p>
+                    <div className="space-y-3 text-sm text-foreground/90">
+                      <p><strong>SMART Description:</strong> Develop a 1–2 page behavioral and technical Q&A bank and complete at least two mock interviews, integrating feedback into improved responses.</p>
                       <div>
-                        <strong>Done When:</strong>
-                        <ul className="mt-2 space-y-1 ml-4 text-xs">
-                          <li>• All metrics tracked and analyzed</li>
-                          <li>• Lessons learned documented</li>
-                          <li>• Next steps identified</li>
+                        <strong>Definition of Done:</strong>
+                        <ul className="mt-2 space-y-1 ml-4">
+                          <li>• Final Q&A document submitted.</li>
+                          <li>• At least two mock interview feedback forms or screenshots included.</li>
+                          <li>• Documented revisions showing applied feedback.</li>
                         </ul>
                       </div>
+                      <p className="text-xs text-muted-foreground italic mt-2"><strong>Evidence/Links:</strong> QA_Bank.pdf, Mock1_Feedback.png, Mock2_Feedback.png, revision notes.</p>
                     </div>
                   </div>
                 </div>
