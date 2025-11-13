@@ -1,290 +1,79 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { StatusBadge } from "@/components/StatusBadge";
-import { ProgressBar } from "@/components/ProgressBar";
 import { ProjectHeader } from "@/components/ProjectHeader";
-import { TrendingUp, AlertCircle, CheckCircle2, Clock } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Calendar } from "lucide-react";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+
+interface WeekReport {
+  id: string;
+  week: number;
+  dateRange: string;
+  status: "on-track" | "at-risk";
+  statusEmoji: string;
+  executiveSummary: string;
+  accomplishments: string[];
+  issuesRisks: { issues: string; risks: string; mitigation: string; };
+  plansNextWeek: string[];
+  upcomingMilestones: string[];
+  changeSinceLastReport: string;
+  projectHealth: string;
+  reflection: string;
+}
+
+const weeklyReports: WeekReport[] = [
+  { id: "week12", week: 12, dateRange: "Nov 2 – 8, 2025", status: "on-track", statusEmoji: "🟢", executiveSummary: "Everything is on track as the project nears closure. Deliverables are being completed and final revisions applied. Collaboration with peers has been constructive, and closure documentation is being drafted. This week underscored the importance of maintaining quality and consistency even as deadlines approach. All planned deliverables remain achievable within scope and timeline.", accomplishments: ["Reviewed and revised documentation for final submission.", "Conducted peer and stakeholder feedback sessions.", "Initiated closure documentation preparation."], issuesRisks: { issues: "No issues identified during this reporting period.", risks: "Timing constraints may impact final review depth.", mitigation: "Prioritized early submission of key deliverables to ensure adequate review time." }, plansNextWeek: ["Complete remaining deliverables and continue limited job-search activities.", "Conduct interview practice sessions with peers and professional stakeholders."], upcomingMilestones: ["Interview Practice – 11/08/2025: At Risk", "Stakeholder Feedback – 11/08/2025: On Track", "Prepare Closure Documents – 11/08/2025: On Track"], changeSinceLastReport: "No changes occurred during this reporting period.", projectHealth: "🟢 On Track", reflection: "This week brought clarity and focus as the project nears its official closure. Having completed most major deliverables, I shifted attention to reflection and refinement—a necessary pivot from execution to documentation and evaluation. Collaborating with peers reminded me that effective project management extends beyond individual deliverables to include communication, accountability, and adaptability. Preparing closure documentation required synthesizing weeks of work into actionable insights, a task that reinforced the value of structured record-keeping and regular reflection. Despite minor timing constraints, I remain confident in delivering high-quality final outputs. Looking ahead, I'm eager to apply the project management skills developed this semester to future professional initiatives." },
+  { id: "week11", week: 11, dateRange: "Oct 26 – Nov 1, 2025", status: "on-track", statusEmoji: "🟢", executiveSummary: "As the project approaches closure, progress this week focused on refining deliverables, incorporating stakeholder feedback, and supporting peers through their own project milestones. Key achievements include completing revisions based on professional input, continuing limited job-search activities, and drafting preliminary closure documentation. The overall trajectory remains on track, with all scheduled milestones achievable within scope and timeline.", accomplishments: ["Revised project documentation based on stakeholder feedback.", "Supported peers through their project milestones with structured reviews.", "Began drafting closure documentation to capture lessons learned and final deliverables."], issuesRisks: { issues: "No issues identified during this reporting period.", risks: "End-of-course transitions may lead to reduced availability for final tasks.", mitigation: "Prioritized early completion of remaining deliverables and scheduled clear task timelines." }, plansNextWeek: ["Complete remaining deliverables and continue limited job-search activities.", "Conduct interview practice sessions with peers and professional stakeholders."], upcomingMilestones: ["Interview Practice – 11/08/2025: At Risk", "Stakeholder Feedback – 11/08/2025: On Track", "Prepare Closure Documents – 11/08/2025: On Track"], changeSinceLastReport: "No changes occurred during this reporting period.", projectHealth: "🟢 On Track", reflection: "As the project nears its conclusion, this week's focus was on finalizing deliverables and supporting peers through constructive feedback. I began drafting closure documentation and outlining interview sessions with a peer, a professor, and a manager from CHASE. Collaborating with classmates reinforced key project management principles such as alignment between goals, values, and execution. Although progress slowed slightly due to end-of-course transitions, this phase highlights how far I've come—growing from project planning and execution to reflection and mentorship. It's rewarding to see both personal and professional development emerge through consistent engagement and perseverance." },
+  { id: "week10", week: 10, dateRange: "Oct 19 – 25, 2025", status: "on-track", statusEmoji: "🟢", executiveSummary: "The project remains on track, with steady progress made across key deliverables. The résumé has been finalized and stakeholder feedback incorporated, resulting in improved application readiness. Several job openings have been identified for targeted applications, marking the transition from planning to execution. Communication with stakeholders this week provided valuable insight into maintaining consistent follow-through and confidence in the application process.", accomplishments: ["Conducted focused job hunting and identified multiple potential openings.", "Completed résumé construction and tailored it to professional standards.", "Held feedback sessions with stakeholders to refine job search strategies and résumé quality."], issuesRisks: { issues: "No issues identified during this reporting period.", risks: "Minor scheduling delays may occur due to the application process workload.", mitigation: "Maintain structured application timelines and continue proactive communication with stakeholders." }, plansNextWeek: ["Continue targeted job applications based on identified opportunities.", "Prepare for peer feedback and stakeholder consultations."], upcomingMilestones: ["Resume Finalization & Peer Feedback – 10/25/2025: Completed", "Job Applications Submission – 11/01/2025: On Track", "Draft Status Report – 11/01/2025: On Track"], changeSinceLastReport: "No changes occurred during this reporting period.", projectHealth: "🟢 On Track", reflection: "This week marked a critical transition—moving from preparation into execution. Finalizing my résumé required synthesizing feedback from multiple sources, balancing clarity with professionalism. Identifying job opportunities felt both empowering and slightly overwhelming, but this process reinforced the importance of staying organized and prioritizing roles aligned with my career goals. Stakeholder feedback reminded me that confidence is a skill developed through practice and iteration. I'm encouraged by the progress made and energized to take the next steps, applying to roles to turn preparation into action." },
+  { id: "week9", week: 9, dateRange: "Oct 12 – 18, 2025", status: "at-risk", statusEmoji: "🟡", executiveSummary: "Project progress slowed this week due to reduced availability and shifted priorities, resulting in an At Risk status. While key deliverables such as job hunting research and résumé construction advanced, stakeholder engagement and documentation updates fell behind schedule. Despite these delays, the foundational work completed this week positions the project to recover during the next reporting period through focused effort and improved time management.", accomplishments: ["Continued job hunting research and analyzed target job requirements.", "Advanced résumé construction and customization efforts.", "Conducted initial self-assessment to guide application preparation."], issuesRisks: { issues: "Reduced availability and competing priorities slowed progress on stakeholder engagement and documentation.", risks: "Continued delays may impact the quality and timeliness of upcoming deliverables.", mitigation: "Re-prioritized tasks and scheduled additional time blocks for project work in the upcoming week." }, plansNextWeek: ["Complete résumé construction and finalize application materials.", "Re-engage with stakeholders for feedback and guidance.", "Finalize draft status report and update project documentation."], upcomingMilestones: ["Resume Finalization & Peer Feedback – 10/25/2025: At Risk", "Job Applications Submission – 11/01/2025: At Risk", "Draft Status Report – 11/01/2025: At Risk"], changeSinceLastReport: "Project status changed from On Track to At Risk due to reduced progress.", projectHealth: "🟡 At Risk", reflection: "This week served as a reminder that project success requires consistent focus and intentional prioritization. While external factors contributed to the slowdown, taking ownership of the situation and adjusting plans moving forward is essential. The work completed—particularly in résumé development and job analysis—demonstrates progress, but the delay in stakeholder communication highlighted the importance of maintaining engagement even during busy periods. I'm committed to recovering this week and ensuring that upcoming deliverables meet the project's high standards through structured effort and stakeholder collaboration." },
+  { id: "week8", week: 8, dateRange: "Oct 5 – 11, 2025", status: "on-track", statusEmoji: "🟢", executiveSummary: "The project continues to perform well with only minor deviations from the planned schedule. This week's focus centered on career platform research and résumé development, both of which progressed as anticipated. Engagement with stakeholders provided clarity on best practices for professional documents and job application strategies. Overall project health remains strong, with all major milestones on track for completion within the established timeline.", accomplishments: ["Conducted research across LinkedIn, Indeed, Handshake, and Career Center platforms.", "Analyzed target job requirements to inform customized résumé development.", "Engaged with stakeholders to gather feedback on job search strategies."], issuesRisks: { issues: "No issues identified during this reporting period.", risks: "Scheduling constraints may slightly impact task completion timelines.", mitigation: "Maintained flexibility in task execution and re-prioritized work as needed to stay on track." }, plansNextWeek: ["Continue résumé construction and customization for selected job opportunities.", "Deepen research into target roles and companies to refine application strategies.", "Hold additional stakeholder consultations for feedback on draft materials."], upcomingMilestones: ["Resume Creation – 10/11/2025: On Track", "Job Requirements Analysis – 10/11/2025: On Track", "Resume Finalization & Peer Feedback – 10/25/2025: On Track"], changeSinceLastReport: "No changes occurred during this reporting period.", projectHealth: "🟢 On Track", reflection: "This week reinforced the importance of structured research and targeted preparation. Analyzing career platforms revealed unique strengths: LinkedIn's professional networking depth, Indeed's breadth of listings, and Handshake's tailored student focus. Understanding these nuances helps me approach job searching more strategically rather than reactively. Additionally, crafting a résumé tailored to specific roles reminded me that quality matters far more than quantity in the application process. Stakeholder feedback this week was invaluable, offering insights that will shape not only my résumé but also my overall approach to professional communication." },
+  { id: "week7", week: 7, dateRange: "Sep 28 – Oct 4, 2025", status: "on-track", statusEmoji: "🟢", executiveSummary: "The project remains on track, with progress aligning closely with planned milestones. This week's efforts concentrated on initiating résumé construction, job requirements analysis, and engagement with career center resources. Research into ISC2 membership confirmed its relevance to long-term career goals, particularly for cybersecurity roles. All key deliverables are progressing as expected, and stakeholder communication remains consistent.", accomplishments: ["Began résumé construction with a focus on professional clarity and alignment with target roles.", "Analyzed job requirements for multiple cybersecurity and business analyst positions.", "Researched ISC2 mission, membership benefits, and career center tools."], issuesRisks: { issues: "No issues identified during this reporting period.", risks: "No risks identified during this reporting period.", mitigation: "N/A" }, plansNextWeek: ["Continue résumé construction and tailor document to specific job opportunities.", "Deepen job hunting research and identify target companies.", "Engage with stakeholders for feedback on draft résumé and job search strategies."], upcomingMilestones: ["Resume Creation – 10/11/2025: On Track", "Job Requirements Analysis – 10/11/2025: On Track", "CC Research & ISC2 Account Creation – 10/11/2025: Completed"], changeSinceLastReport: "No changes occurred during this reporting period.", projectHealth: "🟢 On Track", reflection: "This week felt productive and forward-focused. Starting the résumé construction process required balancing professional tone with authenticity—showcasing skills and experience without exaggeration. Researching job requirements illuminated patterns in what employers value, particularly around analytical thinking, communication, and adaptability. Exploring ISC2's mission reminded me why cybersecurity remains a compelling long-term career path: the opportunity to contribute to a field that protects critical systems and promotes global security standards. I'm encouraged by the progress made and confident in maintaining this momentum moving forward." },
+  { id: "week6", week: 6, dateRange: "Sep 21 – 27, 2025", status: "at-risk", statusEmoji: "🟡", executiveSummary: "Due to sudden health issues, project progress slowed and fell behind the planned schedule. Essential research tasks were completed, including career platform comparisons and initial exploration of ISC2 membership benefits. However, several deliverables requiring sustained focus were delayed. This setback highlights the importance of schedule flexibility and risk mitigation planning. With adjusted priorities and improved health, the project is expected to recover during the next reporting period.", accomplishments: ["Completed career platform research comparing LinkedIn, Indeed, Handshake, and Career Center.", "Researched ISC2 mission, membership tiers, and professional benefits.", "Maintained communication with stakeholders despite reduced project hours."], issuesRisks: { issues: "Sudden health issues reduced available project hours significantly.", risks: "Delayed deliverables may impact subsequent milestones if not addressed promptly.", mitigation: "Focused on flexible research-based activities requiring less time sensitivity while maintaining project momentum." }, plansNextWeek: ["Create and verify ISC2 account and Career Center (CC) profile.", "Review past application documents and conduct a self-assessment.", "Select targeted jobs for résumé customization."], upcomingMilestones: ["Resume Creation – 9/27/2025: On Track", "Job Requirements Analysis – 10/04/2025: On Track", "CC Research & ISC2 Account Creation – 10/04/2025: At Risk"], changeSinceLastReport: "No changes occurred during this reporting period.", projectHealth: "🟡 At Risk", reflection: "This week's progress began under challenging health circumstances, but consistent effort ensured that essential tasks were completed. Analyzing career platforms revealed distinct advantages: Handshake as the most student-oriented, LinkedIn as the most professional, and Indeed as a balanced option. ISC2's mission to promote cybersecurity worldwide aligns closely with my long-term career goals. Despite reduced hours, the work completed reflects both commitment and adaptability." }
+];
 
 const StatusReport = () => {
+  const [expandedWeeks, setExpandedWeeks] = useState<Set<string>>(new Set(["week12"]));
+  const toggleWeek = (weekId: string) => { setExpandedWeeks(prev => { const newSet = new Set(prev); if (newSet.has(weekId)) { newSet.delete(weekId); } else { newSet.add(weekId); } return newSet; }); };
+  const toggleAll = () => { if (expandedWeeks.size === weeklyReports.length) { setExpandedWeeks(new Set()); } else { setExpandedWeeks(new Set(weeklyReports.map(w => w.id))); } };
+  const scrollToWeek = (weekId: string) => { const element = document.getElementById(weekId); if (element) { const offset = 160; const elementPosition = element.getBoundingClientRect().top; const offsetPosition = elementPosition + window.pageYOffset - offset; window.scrollTo({ top: offsetPosition, behavior: 'smooth' }); } };
+
   return (
     <div className="min-h-screen bg-background">
       <ProjectHeader />
-      
-      <main className="container mx-auto px-6 py-8 space-y-6">
-        {/* Executive Summary */}
-        <Card className="shadow-md">
-          <CardHeader className="bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-t-lg">
-            <CardTitle className="text-3xl">Project Status Report</CardTitle>
-            <CardDescription className="text-primary-foreground/90">
-              Week of November 4-10, 2025
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="pt-6">
-            <div className="grid md:grid-cols-4 gap-4">
-              <div className="text-center p-4 bg-success/5 border border-success/20 rounded-lg">
-                <div className="text-3xl font-bold text-success mb-1">85%</div>
-                <div className="text-sm text-muted-foreground">Overall Progress</div>
-              </div>
-              <div className="text-center p-4 bg-primary/5 border border-primary/20 rounded-lg">
-                <div className="text-3xl font-bold text-primary mb-1">12/15</div>
-                <div className="text-sm text-muted-foreground">Tasks Completed</div>
-              </div>
-              <div className="text-center p-4 bg-warning/5 border border-warning/20 rounded-lg">
-                <div className="text-3xl font-bold text-warning mb-1">3</div>
-                <div className="text-sm text-muted-foreground">Active Risks</div>
-              </div>
-              <div className="text-center p-4 bg-accent/5 border border-accent/20 rounded-lg">
-                <div className="text-3xl font-bold text-accent mb-1">15</div>
-                <div className="text-sm text-muted-foreground">Days Remaining</div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Key Metrics */}
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card className="shadow-md">
-            <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-success" />
-                Schedule
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-muted-foreground">Timeline Status</span>
-                <StatusBadge status="on-track" />
-              </div>
-              <ProgressBar progress={85} variant="success" />
-              <p className="text-xs text-muted-foreground mt-2">
-                Project is progressing according to schedule. All major milestones achieved on time.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="shadow-md">
-            <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-success" />
-                Budget
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-muted-foreground">Cost Status</span>
-                <StatusBadge status="on-track" />
-              </div>
-              <ProgressBar progress={72} variant="primary" />
-              <p className="text-xs text-muted-foreground mt-2">
-                Budget utilization is healthy. Currently at 72% with 85% project completion.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="shadow-md">
-            <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-warning" />
-                Quality
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-muted-foreground">Quality Status</span>
-                <StatusBadge status="at-risk" />
-              </div>
-              <ProgressBar progress={78} variant="warning" />
-              <p className="text-xs text-muted-foreground mt-2">
-                Minor quality concerns identified. Action items created to address before next phase.
-              </p>
-            </CardContent>
-          </Card>
+      <nav className="sticky top-[88px] z-40 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
+        <div className="container mx-auto px-6 py-3">
+          <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
+            <button onClick={toggleAll} className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary whitespace-nowrap">
+              <Calendar className="h-4 w-4" />{expandedWeeks.size === weeklyReports.length ? "Collapse All" : "Expand All"}
+            </button>
+            <div className="h-6 w-px bg-border" />
+            {weeklyReports.map((report) => (<button key={report.id} onClick={() => scrollToWeek(report.id)} className="px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary whitespace-nowrap">Week {report.week}</button>))}
+          </div>
         </div>
-
-        {/* Milestones */}
-        <Card className="shadow-md">
-          <CardHeader>
-            <CardTitle>Major Milestones</CardTitle>
-            <CardDescription>Key deliverables and their current status</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-card border border-border rounded-lg">
-                <div className="flex items-center gap-4">
-                  <CheckCircle2 className="h-8 w-8 text-success flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold">Requirements Gathering</h4>
-                    <p className="text-sm text-muted-foreground">Completed on Feb 28, 2025</p>
-                  </div>
+      </nav>
+      <main className="container mx-auto px-6 py-8 max-w-5xl">
+        <div className="mb-8"><h1 className="text-4xl font-bold text-foreground mb-3">Weekly Status Reports</h1><p className="text-lg text-muted-foreground">Business-Aligned Job Hunt – Progress tracking from Week 6 to Week 12</p></div>
+        <div className="space-y-4">
+          {weeklyReports.map((report) => (
+            <Card key={report.id} id={report.id} className="overflow-hidden transition-all duration-300">
+              <button onClick={() => toggleWeek(report.id)} className="w-full text-left bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary/15 hover:to-primary/10 transition-colors p-6 flex items-center justify-between">
+                <div className="flex items-center gap-4"><span className="text-2xl">{report.statusEmoji}</span><div><h2 className="text-xl font-semibold text-foreground">Week {report.week} Status Report</h2><p className="text-sm text-muted-foreground mt-1">{report.dateRange} – {report.status === "on-track" ? "On Track" : "At Risk"}</p></div></div>
+                <div className={cn("transition-transform duration-300 text-xl", expandedWeeks.has(report.id) ? "rotate-180" : "")}>▼</div>
+              </button>
+              {expandedWeeks.has(report.id) && (
+                <div className="p-6 space-y-6 animate-in fade-in slide-in-from-top-2 duration-300">
+                  <div><h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">📋 Executive Summary</h3><p className="text-muted-foreground leading-relaxed">{report.executiveSummary}</p></div>
+                  <div><h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">✅ Accomplishments This Week</h3><ul className="list-disc list-inside space-y-1 text-muted-foreground">{report.accomplishments.map((item, idx) => (<li key={idx}>{item}</li>))}</ul></div>
+                  <div><h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">⚠️ Issues & Risks / Mitigations</h3><div className="space-y-2 text-muted-foreground"><p><strong className="text-foreground">Issues:</strong> {report.issuesRisks.issues}</p><p><strong className="text-foreground">Risks:</strong> {report.issuesRisks.risks}</p><p><strong className="text-foreground">Mitigation:</strong> {report.issuesRisks.mitigation}</p></div></div>
+                  <div><h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">📅 Plans for Next Week</h3><ul className="list-disc list-inside space-y-1 text-muted-foreground">{report.plansNextWeek.map((item, idx) => (<li key={idx}>{item}</li>))}</ul></div>
+                  <div><h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">🎯 Upcoming Milestones</h3><ul className="list-disc list-inside space-y-1 text-muted-foreground">{report.upcomingMilestones.map((item, idx) => (<li key={idx}>{item}</li>))}</ul></div>
+                  <div><h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">🔄 Change Since Last Report</h3><p className="text-muted-foreground">{report.changeSinceLastReport}</p></div>
+                  <div><h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">💚 Project Health</h3><p className="text-muted-foreground font-medium">{report.projectHealth}</p></div>
+                  <div className="pt-4 border-t border-border"><h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">💭 Reflection</h3><p className="text-muted-foreground leading-relaxed">{report.reflection}</p></div>
                 </div>
-                <StatusBadge status="completed" />
-              </div>
-
-              <div className="flex items-center justify-between p-4 bg-card border border-border rounded-lg">
-                <div className="flex items-center gap-4">
-                  <CheckCircle2 className="h-8 w-8 text-success flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold">System Design</h4>
-                    <p className="text-sm text-muted-foreground">Completed on Mar 31, 2025</p>
-                  </div>
-                </div>
-                <StatusBadge status="completed" />
-              </div>
-
-              <div className="flex items-center justify-between p-4 bg-primary/5 border border-primary rounded-lg">
-                <div className="flex items-center gap-4">
-                  <Clock className="h-8 w-8 text-primary flex-shrink-0 animate-pulse" />
-                  <div>
-                    <h4 className="font-semibold">Development Phase</h4>
-                    <p className="text-sm text-muted-foreground">In progress - 85% complete</p>
-                  </div>
-                </div>
-                <StatusBadge status="on-track" />
-              </div>
-
-              <div className="flex items-center justify-between p-4 bg-card border border-border rounded-lg opacity-60">
-                <div className="flex items-center gap-4">
-                  <Clock className="h-8 w-8 text-muted-foreground flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold">Testing & QA</h4>
-                    <p className="text-sm text-muted-foreground">Scheduled for Nov 25, 2025</p>
-                  </div>
-                </div>
-                <StatusBadge status="on-track" />
-              </div>
-
-              <div className="flex items-center justify-between p-4 bg-card border border-border rounded-lg opacity-60">
-                <div className="flex items-center gap-4">
-                  <Clock className="h-8 w-8 text-muted-foreground flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold">Deployment</h4>
-                    <p className="text-sm text-muted-foreground">Scheduled for Jun 30, 2025</p>
-                  </div>
-                </div>
-                <StatusBadge status="on-track" />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Issues & Risks */}
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="shadow-md">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <AlertCircle className="h-5 w-5 text-destructive" />
-                Active Issues
-              </CardTitle>
-              <CardDescription>Current blockers and challenges</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="p-4 bg-destructive/5 border border-destructive/20 rounded-lg">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-semibold text-sm">API Integration Delay</span>
-                  <span className="text-xs px-2 py-1 bg-destructive text-destructive-foreground rounded">High</span>
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Third-party API documentation incomplete, causing 2-day delay in integration work.
-                </p>
-                <div className="text-xs text-muted-foreground">
-                  <span className="font-medium">Action:</span> Escalated to vendor, temporary mock service implemented
-                </div>
-              </div>
-
-              <div className="p-4 bg-warning/5 border border-warning/20 rounded-lg">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-semibold text-sm">Team Member Availability</span>
-                  <span className="text-xs px-2 py-1 bg-warning text-warning-foreground rounded">Medium</span>
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Lead designer scheduled for other project next week.
-                </p>
-                <div className="text-xs text-muted-foreground">
-                  <span className="font-medium">Action:</span> Design work prioritized and advanced to this week
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="shadow-md">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <AlertCircle className="h-5 w-5 text-warning" />
-                Risk Register
-              </CardTitle>
-              <CardDescription>Monitored project risks</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="p-4 bg-warning/5 border border-warning/20 rounded-lg">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-semibold text-sm">Browser Compatibility</span>
-                  <span className="text-xs px-2 py-1 bg-warning text-warning-foreground rounded">Medium</span>
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Legacy browser support may require additional development time.
-                </p>
-                <div className="text-xs text-muted-foreground">
-                  <span className="font-medium">Mitigation:</span> Early testing scheduled, polyfills identified
-                </div>
-              </div>
-
-              <div className="p-4 bg-primary/5 border border-primary/20 rounded-lg">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-semibold text-sm">Scope Creep</span>
-                  <span className="text-xs px-2 py-1 bg-primary text-primary-foreground rounded">Low</span>
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Stakeholders requesting additional features outside original scope.
-                </p>
-                <div className="text-xs text-muted-foreground">
-                  <span className="font-medium">Mitigation:</span> Change control process enforced, features logged for Phase 2
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              )}
+            </Card>
+          ))}
         </div>
-
-        {/* Next Steps */}
-        <Card className="shadow-md">
-          <CardHeader>
-            <CardTitle>Planned Activities - Next Period</CardTitle>
-            <CardDescription>Key activities scheduled for the upcoming week</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="flex gap-3 p-3 bg-secondary/30 rounded-lg">
-                <div className="w-2 bg-primary rounded-full flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Complete API Integration</h4>
-                  <p className="text-xs text-muted-foreground">Finalize remaining API endpoints and test data flow</p>
-                </div>
-              </div>
-
-              <div className="flex gap-3 p-3 bg-secondary/30 rounded-lg">
-                <div className="w-2 bg-primary rounded-full flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">User Acceptance Testing Prep</h4>
-                  <p className="text-xs text-muted-foreground">Prepare test scenarios and user documentation</p>
-                </div>
-              </div>
-
-              <div className="flex gap-3 p-3 bg-secondary/30 rounded-lg">
-                <div className="w-2 bg-primary rounded-full flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Security Audit</h4>
-                  <p className="text-xs text-muted-foreground">Conduct comprehensive security review and penetration testing</p>
-                </div>
-              </div>
-
-              <div className="flex gap-3 p-3 bg-secondary/30 rounded-lg">
-                <div className="w-2 bg-primary rounded-full flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">Performance Optimization</h4>
-                  <p className="text-xs text-muted-foreground">Optimize database queries and implement caching strategy</p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </main>
     </div>
   );
