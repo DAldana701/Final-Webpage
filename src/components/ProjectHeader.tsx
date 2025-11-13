@@ -12,7 +12,7 @@ export const ProjectHeader = () => {
           </div>
           <nav className="flex gap-2">
             <NavLink
-              to="/"
+              to="/charter"
               className="flex items-center gap-2 px-4 py-2 rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary"
               activeClassName="bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
             >
