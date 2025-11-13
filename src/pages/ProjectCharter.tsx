@@ -60,9 +60,9 @@ const ProjectCharter = () => {
     { id: "scope", label: "Scope", icon: Layers },
     { id: "stakeholders", label: "Stakeholders", icon: Users },
     { id: "deliverables", label: "Deliverables", icon: Package },
-    { id: "milestones", label: "Milestones", icon: DollarSign },
-    { id: "resources", label: "Resources", icon: Wrench },
-    { id: "assumptions", label: "Risks & Assumptions", icon: Hammer },
+    { id: "milestones", label: "Budget", icon: DollarSign },
+    { id: "resources", label: "Methodology", icon: Wrench },
+    { id: "assumptions", label: "Tools", icon: Hammer },
   ];
 
   return (
@@ -475,7 +475,7 @@ const ProjectCharter = () => {
             </Card>
           </section>
 
-          {/* Section 7: Milestones */}
+          {/* Section 7: Budget Estimation */}
           <section data-section="milestones" className="scroll-mt-24">
             <Card className="shadow-md border border-border/50 hover:shadow-lg transition-all bg-accent/5">
               <CardHeader className="pb-4 bg-gradient-to-r from-accent/10 via-transparent to-primary/10">
@@ -483,48 +483,178 @@ const ProjectCharter = () => {
                   <div className="p-2 bg-accent/10 rounded-lg">
                     <DollarSign className="h-6 w-6 text-accent" />
                   </div>
-                  <CardTitle className="text-2xl">Key Milestones</CardTitle>
+                  <CardTitle className="text-2xl">Budget Estimation</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="pt-6">
-                <div className="space-y-4">
-                  <div className="bg-card border-l-4 border-primary rounded-lg p-5 hover:shadow-md transition-shadow">
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-base font-semibold text-primary">Resume & Materials Complete</h4>
-                      <span className="text-sm font-medium text-muted-foreground">Week 6</span>
+              <CardContent className="pt-6 space-y-6">
+                <div className="bg-card border border-border/40 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-primary mb-3">Budget Overview</h4>
+                  <p className="text-foreground/90 leading-relaxed mb-4">
+                    This project relies primarily on personal effort and free student resources. Most expenses relate to time investment, minimal materials, and optional professional tools. A 15% contingency reserve is included to manage unforeseen costs.
+                  </p>
+                </div>
+
+                <div className="bg-card border border-border/40 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-primary mb-4">Labor Costs</h4>
+                  <p className="text-foreground/90 mb-4">
+                    The primary cost is the student's own labor — including development of deliverables, networking, and application preparation. Estimated <strong>72–96 hours</strong> at <strong>$20/hour</strong> yields a total labor range of <strong>$1,440–$1,920</strong>.
+                  </p>
+                  <div className="overflow-x-auto rounded-lg border border-border/40">
+                    <table className="w-full border-collapse bg-card">
+                      <thead>
+                        <tr className="bg-primary/10">
+                          <th className="border-b border-border p-3 text-left text-sm font-semibold">Role</th>
+                          <th className="border-b border-border p-3 text-left text-sm font-semibold">Hours</th>
+                          <th className="border-b border-border p-3 text-left text-sm font-semibold">Rate</th>
+                          <th className="border-b border-border p-3 text-left text-sm font-semibold">Estimated Cost</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="hover:bg-secondary/30 transition-colors">
+                          <td className="border-b border-border/30 p-3 text-sm">Student PM/Analyst (self)</td>
+                          <td className="border-b border-border/30 p-3 text-sm">72–96</td>
+                          <td className="border-b border-border/30 p-3 text-sm">$20/hr</td>
+                          <td className="border-b border-border/30 p-3 text-sm font-medium">$1,440 – $1,920</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-card border border-border/40 rounded-lg p-6">
+                    <h4 className="text-lg font-semibold text-accent mb-4">Equipment & Software</h4>
+                    <p className="text-sm text-muted-foreground mb-3">Most tools are freely available through CSULA or open platforms.</p>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between p-2 bg-muted/30 rounded">
+                        <span>GitHub Pages / Notion / Google Sheets</span>
+                        <span className="font-medium">$0</span>
+                      </div>
+                      <div className="flex justify-between p-2 bg-muted/30 rounded">
+                        <span>LinkedIn Learning (via CSULA)</span>
+                        <span className="font-medium">$0</span>
+                      </div>
+                      <div className="flex justify-between p-2 bg-muted/30 rounded">
+                        <span>Microsoft Office (optional)</span>
+                        <span className="font-medium">$0–$60</span>
+                      </div>
+                      <div className="flex justify-between p-2 bg-muted/30 rounded">
+                        <span>AI Platforms (ChatGPT, Lovable)</span>
+                        <span className="font-medium">$0–$30</span>
+                      </div>
                     </div>
-                    <p className="text-sm text-foreground/80">Professional application package finalized with stakeholder approval</p>
+                    <p className="text-xs text-muted-foreground italic mt-3">AI tools are used ethically and responsibly to enhance writing clarity, brainstorming, and project planning efficiency.</p>
                   </div>
 
-                  <div className="bg-card border-l-4 border-accent rounded-lg p-5 hover:shadow-md transition-shadow">
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-base font-semibold text-accent">Networking Phase Complete</h4>
-                      <span className="text-sm font-medium text-muted-foreground">Week 10</span>
+                  <div className="bg-card border border-border/40 rounded-lg p-6">
+                    <h4 className="text-lg font-semibold text-success mb-4">Materials & Services</h4>
+                    <div className="space-y-3">
+                      <div>
+                        <h5 className="text-sm font-semibold mb-2">Materials</h5>
+                        <div className="space-y-2 text-sm">
+                          <div className="flex justify-between p-2 bg-muted/30 rounded">
+                            <span>Resume Printing</span>
+                            <span className="font-medium">$10–$20</span>
+                          </div>
+                          <div className="flex justify-between p-2 bg-muted/30 rounded">
+                            <span>ISC2 CC Prep Materials</span>
+                            <span className="font-medium">$0–$60</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <h5 className="text-sm font-semibold mb-2">Services</h5>
+                        <div className="space-y-2 text-sm">
+                          <div className="flex justify-between p-2 bg-muted/30 rounded">
+                            <span>Career Center Services</span>
+                            <span className="font-medium">$0</span>
+                          </div>
+                          <div className="flex justify-between p-2 bg-muted/30 rounded">
+                            <span>LinkedIn Premium (optional)</span>
+                            <span className="font-medium">$40</span>
+                          </div>
+                          <div className="flex justify-between p-2 bg-muted/30 rounded">
+                            <span>Networking Events</span>
+                            <span className="font-medium">$20–$40</span>
+                          </div>
+                          <div className="flex justify-between p-2 bg-muted/30 rounded">
+                            <span>Workshops/Meetups</span>
+                            <span className="font-medium">$0–$20</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-sm text-foreground/80">Informational interviews conducted and professional connections established</p>
                   </div>
+                </div>
 
-                  <div className="bg-card border-l-4 border-success rounded-lg p-5 hover:shadow-md transition-shadow">
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-base font-semibold text-success">Applications Submitted</h4>
-                      <span className="text-sm font-medium text-muted-foreground">Week 14</span>
-                    </div>
-                    <p className="text-sm text-foreground/80">3–5 targeted job applications submitted with customized materials</p>
+                <div className="bg-card border border-border/40 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-warning mb-3">Contingency & Risk Management</h4>
+                  <p className="text-foreground/90 mb-3">
+                    A <strong>15% contingency reserve ($150–$250)</strong> covers minor unplanned costs such as transportation or supplies.
+                  </p>
+                  <ul className="space-y-2 text-sm text-foreground/90">
+                    <li className="flex gap-2"><span className="text-warning">•</span><span><strong>Risk 1 – Certification prep costs exceed budget:</strong> Use free LinkedIn Learning and CSULA materials before purchasing new resources.</span></li>
+                    <li className="flex gap-2"><span className="text-warning">•</span><span><strong>Risk 2 – Event transportation or fees higher than expected:</strong> Prioritize virtual or free events.</span></li>
+                    <li className="flex gap-2"><span className="text-warning">•</span><span><strong>Risk 3 – Additional printing or supplies required:</strong> Favor digital submissions; print selectively.</span></li>
+                  </ul>
+                </div>
+
+                <div className="bg-primary/5 border border-primary/30 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-primary mb-4">Budget Summary</h4>
+                  <div className="overflow-x-auto rounded-lg border border-border/40">
+                    <table className="w-full border-collapse bg-card">
+                      <thead>
+                        <tr className="bg-primary/10">
+                          <th className="border-b border-border p-3 text-left text-sm font-semibold">Category</th>
+                          <th className="border-b border-border p-3 text-left text-sm font-semibold">% of Total</th>
+                          <th className="border-b border-border p-3 text-left text-sm font-semibold">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="hover:bg-secondary/30 transition-colors">
+                          <td className="border-b border-border/30 p-3 text-sm">Labor</td>
+                          <td className="border-b border-border/30 p-3 text-sm">80.9%</td>
+                          <td className="border-b border-border/30 p-3 text-sm">$1,680.00</td>
+                        </tr>
+                        <tr className="hover:bg-secondary/30 transition-colors">
+                          <td className="border-b border-border/30 p-3 text-sm">Equipment/Software</td>
+                          <td className="border-b border-border/30 p-3 text-sm">1.4%</td>
+                          <td className="border-b border-border/30 p-3 text-sm">$30.00</td>
+                        </tr>
+                        <tr className="hover:bg-secondary/30 transition-colors">
+                          <td className="border-b border-border/30 p-3 text-sm">Materials</td>
+                          <td className="border-b border-border/30 p-3 text-sm">1.7%</td>
+                          <td className="border-b border-border/30 p-3 text-sm">$35.00</td>
+                        </tr>
+                        <tr className="hover:bg-secondary/30 transition-colors">
+                          <td className="border-b border-border/30 p-3 text-sm">Services</td>
+                          <td className="border-b border-border/30 p-3 text-sm">2.9%</td>
+                          <td className="border-b border-border/30 p-3 text-sm">$60.00</td>
+                        </tr>
+                        <tr className="hover:bg-secondary/30 transition-colors">
+                          <td className="border-b border-border/30 p-3 text-sm">Contingency</td>
+                          <td className="border-b border-border/30 p-3 text-sm">13.0%</td>
+                          <td className="border-b border-border/30 p-3 text-sm">$270.75</td>
+                        </tr>
+                        <tr className="bg-primary/10 font-semibold">
+                          <td className="p-3 text-sm">Total Estimated Budget</td>
+                          <td className="p-3 text-sm">100%</td>
+                          <td className="p-3 text-sm text-primary">$2,075.75</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-
-                  <div className="bg-card border-l-4 border-warning rounded-lg p-5 hover:shadow-md transition-shadow">
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-base font-semibold text-warning">Project Closure</h4>
-                      <span className="text-sm font-medium text-muted-foreground">Week 16</span>
-                    </div>
-                    <p className="text-sm text-foreground/80">Final report completed with documented outcomes and next steps</p>
+                  <div className="bg-warning/10 border border-warning/30 rounded-lg p-4 mt-4">
+                    <p className="text-sm text-foreground/90 italic">
+                      <strong>Assumptions:</strong> 84 hours at $20/hr; Equipment/Software $30; Materials $35; Services $60; 15% contingency applied.
+                    </p>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </section>
 
-          {/* Section 8: Resources */}
+          {/* Section 8: Project Methodology */}
           <section data-section="resources" className="scroll-mt-24">
             <Card className="shadow-md border border-border/50 hover:shadow-lg transition-all bg-muted/20">
               <CardHeader className="pb-4 bg-gradient-to-r from-primary/10 via-transparent to-accent/10">
@@ -532,149 +662,92 @@ const ProjectCharter = () => {
                   <div className="p-2 bg-primary/10 rounded-lg">
                     <Wrench className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-2xl">Resources & Budget</CardTitle>
+                  <CardTitle className="text-2xl">Project Methodology</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 space-y-6">
+                <div className="bg-card border-l-4 border-primary rounded-lg p-6 hover:shadow-md transition-shadow">
+                  <h4 className="text-lg font-semibold text-primary mb-3">Hybrid Methodology (Predictive + Iterative)</h4>
+                  <p className="text-foreground/90 leading-relaxed mb-4">
+                    Given the project's balance between structured deliverables and adaptive activities, a <strong>Hybrid methodology</strong> — combining <strong>Predictive</strong> and <strong>Iterative</strong> elements — was selected.
+                  </p>
+                </div>
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-card border border-border/40 rounded-lg p-6 hover:border-primary/40 hover:shadow-md transition-all">
-                    <h4 className="text-lg font-semibold text-primary mb-4">Key Resources</h4>
-                    <ul className="space-y-3 text-sm text-foreground/80">
-                      <li className="flex gap-3">
-                        <span className="text-primary font-bold">•</span>
-                        <div>
-                          <strong>CSULA Career Center:</strong> Resume reviews, mock interviews, job search support
-                        </div>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-primary font-bold">•</span>
-                        <div>
-                          <strong>Faculty & Professors:</strong> Professional guidance and recommendations
-                        </div>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-primary font-bold">•</span>
-                        <div>
-                          <strong>Online Platforms:</strong> LinkedIn, job boards, networking tools
-                        </div>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-primary font-bold">•</span>
-                        <div>
-                          <strong>Personal Network:</strong> Family, friends, and peers for support
-                        </div>
-                      </li>
-                    </ul>
+                    <h4 className="text-lg font-semibold text-primary mb-3">Predictive Planning</h4>
+                    <p className="text-foreground/90 leading-relaxed">
+                      Applied to milestone-based deliverables such as the <strong>Job Application Package</strong>, <strong>Networking Portfolio</strong>, and <strong>Interview Readiness Kit</strong>, ensuring each component maintains a clear scope, timeline, and quality standard.
+                    </p>
                   </div>
 
                   <div className="bg-card border border-border/40 rounded-lg p-6 hover:border-accent/40 hover:shadow-md transition-all">
-                    <h4 className="text-lg font-semibold text-accent mb-4">Budget Allocation</h4>
-                    <div className="space-y-3 text-sm">
-                      <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                        <span className="font-medium">Professional Development</span>
-                        <span className="font-bold text-accent">$150</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                        <span className="font-medium">Networking Events</span>
-                        <span className="font-bold text-accent">$100</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                        <span className="font-medium">Materials & Printing</span>
-                        <span className="font-bold text-accent">$50</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 bg-primary/10 rounded-lg font-semibold">
-                        <span>Total Budget</span>
-                        <span className="text-primary text-lg">$300</span>
-                      </div>
-                    </div>
+                    <h4 className="text-lg font-semibold text-accent mb-3">Iterative Cycles</h4>
+                    <p className="text-foreground/90 leading-relaxed">
+                      Used for recurring and adaptive tasks like <strong>application submissions</strong> and <strong>networking activities</strong>, managed through weekly sprints. This allows for continuous improvement and flexibility based on feedback.
+                    </p>
                   </div>
+                </div>
+
+                <div className="bg-card border border-border/40 rounded-lg p-6">
+                  <p className="text-foreground/90 leading-relaxed">
+                    This approach provides both <strong>structure</strong> and <strong>adaptability</strong>, supporting steady progress while integrating insights from professors, counselors, and other stakeholders. It mirrors professional project management practices that balance defined goals with responsive, real-world learning.
+                  </p>
                 </div>
               </CardContent>
             </Card>
           </section>
 
-          {/* Section 9: Risks & Assumptions */}
-          <section data-section="assumptions" className="scroll-mt-24 mb-12">
+          {/* Section 9: Project Tools */}
+          <section data-section="assumptions" className="scroll-mt-24">
             <Card className="shadow-md border border-border/50 hover:shadow-lg transition-all">
               <CardHeader className="pb-4 bg-gradient-to-r from-warning/10 via-transparent to-destructive/10">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-warning/10 rounded-lg">
                     <Hammer className="h-6 w-6 text-warning" />
                   </div>
-                  <CardTitle className="text-2xl">Risks, Assumptions & Constraints</CardTitle>
+                  <CardTitle className="text-2xl">Project Tools</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="pt-6">
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-destructive/5 border-l-4 border-destructive rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <h4 className="text-lg font-semibold text-destructive mb-4">Risks</h4>
-                    <ul className="space-y-3 text-sm text-foreground/80">
-                      <li className="flex gap-2">
-                        <span className="text-destructive font-bold">•</span>
-                        <div>
-                          <strong>Time Constraints:</strong> Balancing coursework with job search activities
-                        </div>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-destructive font-bold">•</span>
-                        <div>
-                          <strong>Market Competition:</strong> High competition for entry-level positions
-                        </div>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-destructive font-bold">•</span>
-                        <div>
-                          <strong>Delayed Response:</strong> Slow employer responses affecting timeline
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+              <CardContent className="pt-6 space-y-6">
+                <div className="bg-card border-l-4 border-primary rounded-lg p-6 hover:shadow-md transition-shadow">
+                  <h4 className="text-lg font-semibold text-primary mb-3">Overview</h4>
+                  <p className="text-foreground/90 leading-relaxed">
+                    A combination of digital tools was used to plan, organize, and manage this project efficiently. Each platform supports the hybrid methodology by offering both structure and flexibility in execution.
+                  </p>
+                </div>
 
-                  <div className="bg-primary/5 border-l-4 border-primary rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <h4 className="text-lg font-semibold text-primary mb-4">Assumptions</h4>
-                    <ul className="space-y-3 text-sm text-foreground/80">
-                      <li className="flex gap-2">
-                        <span className="text-primary font-bold">•</span>
-                        <div>Career Center resources remain accessible throughout semester</div>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-primary font-bold">•</span>
-                        <div>Stakeholders provide timely feedback and support</div>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-primary font-bold">•</span>
-                        <div>Job market remains stable with available opportunities</div>
-                      </li>
-                    </ul>
-                  </div>
+                <div className="bg-card border border-border/40 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-accent mb-4">Tool Evaluation</h4>
+                  <p className="text-foreground/90 mb-3">Three primary platforms were evaluated: <strong>Microsoft Project</strong>, <strong>Trello</strong>, and <strong>Monday.com</strong>.</p>
+                  <ul className="space-y-3 text-foreground/90">
+                    <li className="flex gap-2"><span className="text-accent">•</span><span><strong>Microsoft Project:</strong> Offers advanced scheduling features but is less suitable for iterative task updates.</span></li>
+                    <li className="flex gap-2"><span className="text-accent">•</span><span><strong>Trello:</strong> Provides an intuitive Agile interface but lacks advanced timeline visualization.</span></li>
+                    <li className="flex gap-2"><span className="text-accent">•</span><span><strong>Monday.com:</strong> Combines both — offering Gantt charts, timelines, and Kanban boards in one workspace.</span></li>
+                  </ul>
+                </div>
 
-                  <div className="bg-warning/5 border-l-4 border-warning rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <h4 className="text-lg font-semibold text-warning mb-4">Constraints</h4>
-                    <ul className="space-y-3 text-sm text-foreground/80">
-                      <li className="flex gap-2">
-                        <span className="text-warning font-bold">•</span>
-                        <div>
-                          <strong>Time:</strong> Semester timeline (16 weeks)
-                        </div>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-warning font-bold">•</span>
-                        <div>
-                          <strong>Budget:</strong> Limited to $300 total
-                        </div>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="text-warning font-bold">•</span>
-                        <div>
-                          <strong>Scope:</strong> Entry-level positions only
-                        </div>
-                      </li>
+                <div className="bg-success/5 border-l-4 border-success rounded-lg p-6 hover:shadow-md transition-shadow">
+                  <h4 className="text-lg font-semibold text-success mb-3">Selected Tool: Monday.com</h4>
+                  <p className="text-foreground/90 leading-relaxed mb-4">
+                    <strong>Monday.com</strong> was chosen as the central project management tool. It allows predictive planning for structured deliverables (such as the Job Application Package and Interview Kit) while supporting iterative tracking of networking and application tasks through Kanban boards.
+                  </p>
+                  <div className="bg-card border border-border/30 rounded-lg p-4">
+                    <h5 className="text-sm font-semibold text-success mb-3">The platform enables:</h5>
+                    <ul className="space-y-2 text-sm text-foreground/90">
+                      <li className="flex gap-2"><span className="text-success">•</span><span>Clear visualization of task dependencies (e.g., applications linked to finalized resumes).</span></li>
+                      <li className="flex gap-2"><span className="text-success">•</span><span>Alignment of project milestones with class timelines.</span></li>
+                      <li className="flex gap-2"><span className="text-success">•</span><span>Seamless integration of feedback, revisions, and scheduling updates.</span></li>
                     </ul>
                   </div>
+                  <p className="text-foreground/90 leading-relaxed mt-4">
+                    Once configured, Monday.com provided a cohesive environment for managing progress, maintaining accountability, and visualizing outcomes.
+                  </p>
                 </div>
               </CardContent>
             </Card>
           </section>
+
         </div>
       </main>
     </div>
