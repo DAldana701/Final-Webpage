@@ -133,31 +133,27 @@ const ProjectCharter = () => {
               </CardHeader>
               <CardContent className="pt-6 space-y-6">
                 <div className="bg-card border-l-4 border-primary rounded-lg p-6 hover:shadow-md transition-shadow">
-                  <h3 className="text-xl font-bold text-primary mb-3">Business-Aligned Job Hunt</h3>
-                  <p className="text-foreground/90 leading-relaxed">
-                    A semester-long project preparing for internships or entry-level roles in information systems, IT, and cybersecurity through structured self-assessment, professional materials creation, and targeted stakeholder feedback.
+                  <h3 className="text-xl font-bold text-primary mb-3">Project Title: Business-Aligned Job Hunt</h3>
+                  <p className="text-foreground/90 leading-relaxed mb-4">
+                    This semester-long project focuses on preparing and applying for internships or entry-level roles aligned with my field of study. It includes a structured self-assessment of my academic and professional achievements, the creation and customization of job application materials, and the collection of targeted feedback from professors, counselors, and peers to strengthen readiness and confidence. Throughout this process, I will apply knowledge from information systems, IT, and cybersecurity to progress toward meaningful, career-aligned opportunities.
                   </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-card border border-border/40 rounded-lg p-6 hover:border-primary/40 hover:shadow-md transition-all">
-                    <h4 className="text-lg font-semibold text-primary mb-3">Goal</h4>
-                    <p className="text-foreground/90">
-                      Secure measurable progress toward a business-aligned position through professional materials, applications, and networking.
+                  <div className="bg-primary/5 border-l-4 border-primary/50 rounded-lg p-4">
+                    <p className="text-foreground/90 font-medium">
+                      <strong className="text-primary">Project Goal:</strong> To achieve measurable progress toward securing a business-aligned internship or entry-level position by preparing professional application materials, submitting at least three targeted applications, and building a networking pipeline that generates recruiter or interview opportunities.
                     </p>
                   </div>
+                </div>
 
-                  <div className="bg-success/5 border border-success/30 rounded-lg p-6 hover:border-success/50 hover:shadow-md transition-all">
-                    <h4 className="text-lg font-semibold text-success mb-3 flex items-center gap-2">
-                      <CheckCircle2 className="h-5 w-5" />
-                      Success Metrics
-                    </h4>
-                    <ul className="space-y-2 text-sm text-foreground/80">
-                      <li className="flex gap-2"><span className="text-success">•</span><span><strong>3–5 applications</strong> submitted</span></li>
-                      <li className="flex gap-2"><span className="text-success">•</span><span><strong>80%+ positive</strong> feedback on materials</span></li>
-                      <li className="flex gap-2"><span className="text-success">•</span><span><strong>2+ professional</strong> LinkedIn connections</span></li>
-                    </ul>
-                  </div>
+                <div className="bg-success/5 border border-success/30 rounded-lg p-6 hover:border-success/50 hover:shadow-md transition-all">
+                  <h4 className="text-lg font-semibold text-success mb-3 flex items-center gap-2">
+                    <CheckCircle2 className="h-5 w-5" />
+                    Success Metrics
+                  </h4>
+                  <ul className="space-y-2 text-foreground/80">
+                    <li className="flex gap-2"><span className="text-success">•</span><span>Submit <strong>3–5 applications</strong> by semester end</span></li>
+                    <li className="flex gap-2"><span className="text-success">•</span><span>Obtain <strong>at least 80% positive feedback</strong> on resume drafts from stakeholders</span></li>
+                    <li className="flex gap-2"><span className="text-success">•</span><span>Expand my LinkedIn network by <strong>2 or more professional connections</strong></span></li>
+                  </ul>
                 </div>
               </CardContent>
             </Card>
@@ -175,30 +171,31 @@ const ProjectCharter = () => {
                 </div>
               </CardHeader>
               <CardContent className="pt-6 space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-card border border-border/40 rounded-lg p-6 hover:border-accent/40 hover:shadow-md transition-all">
-                    <h4 className="text-lg font-semibold text-accent mb-3">Mission</h4>
-                    <p className="text-foreground/90 leading-relaxed">
-                      Pursue meaningful opportunities in business and cybersecurity through professional skill development and disciplined goal achievement.
-                    </p>
-                  </div>
+                <div className="bg-card border border-border/40 rounded-lg p-6 hover:border-accent/40 hover:shadow-md transition-all">
+                  <h4 className="text-lg font-semibold text-accent mb-3">Mission Statement</h4>
+                  <p className="text-foreground/90 leading-relaxed">
+                    To pursue meaningful learning and career opportunities in business, information systems, and cybersecurity by developing professional skills, completing targeted projects, and achieving goals through persistence and discipline.
+                  </p>
+                </div>
 
-                  <div className="bg-card border border-border/40 rounded-lg p-6 hover:border-primary/40 hover:shadow-md transition-all">
-                    <h4 className="text-lg font-semibold text-primary mb-3">Vision</h4>
-                    <p className="text-foreground/90 leading-relaxed">
-                      Secure a technology position within 1-3 years post-graduation, achieving financial stability through continuous learning and growth.
-                    </p>
-                  </div>
+                <div className="bg-card border border-border/40 rounded-lg p-6 hover:border-primary/40 hover:shadow-md transition-all">
+                  <h4 className="text-lg font-semibold text-primary mb-3">Vision Statement</h4>
+                  <p className="text-foreground/90 leading-relaxed">
+                    To secure a position in a business or technology-related field within one to three years after graduation — achieving financial stability through continuous learning, professional growth, and strategic career planning.
+                  </p>
                 </div>
 
                 <div className="bg-card border-l-4 border-accent rounded-lg p-6 hover:shadow-md transition-shadow">
-                  <h4 className="text-lg font-semibold text-accent mb-3">Strategic Goals</h4>
-                  <ul className="grid md:grid-cols-2 gap-3 text-sm text-foreground/80">
-                    <li className="flex gap-2"><span className="text-accent">•</span><span>Expand professional network</span></li>
-                    <li className="flex gap-2"><span className="text-accent">•</span><span>Strengthen self-directed learning</span></li>
-                    <li className="flex gap-2"><span className="text-accent">•</span><span>Align skills with employer expectations</span></li>
-                    <li className="flex gap-2"><span className="text-accent">•</span><span>Prepare for professional certifications</span></li>
+                  <h4 className="text-lg font-semibold text-accent mb-4">Strategic Goal Support</h4>
+                  <ul className="space-y-2 text-foreground/90">
+                    <li className="flex gap-2"><span className="text-accent">•</span><span>Expand my professional network by engaging with key stakeholders and building reliable connections</span></li>
+                    <li className="flex gap-2"><span className="text-accent">•</span><span>Strengthen self-directed learning through study plans and cybersecurity concept reviews</span></li>
+                    <li className="flex gap-2"><span className="text-accent">•</span><span>Ensure my skills and knowledge align with employer and managerial expectations</span></li>
+                    <li className="flex gap-2"><span className="text-accent">•</span><span>Prepare confidently for professional certification pursuits</span></li>
                   </ul>
+                  <p className="text-muted-foreground italic mt-4 text-sm leading-relaxed">
+                    This project supports my mission by reinforcing career readiness through structured skill development and a targeted job search. It advances my vision by positioning me for success in business, information systems, and cybersecurity roles.
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -216,36 +213,37 @@ const ProjectCharter = () => {
                 </div>
               </CardHeader>
               <CardContent className="pt-6 space-y-6">
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-card border-l-4 border-primary rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <h4 className="text-lg font-semibold text-primary mb-3">Professional Value</h4>
-                    <ul className="space-y-2 text-sm text-foreground/80">
-                      <li className="flex gap-2"><span className="text-primary">•</span><span>Strengthen existing skills</span></li>
-                      <li className="flex gap-2"><span className="text-primary">•</span><span>Expand professional network</span></li>
-                      <li className="flex gap-2"><span className="text-primary">•</span><span>Create tailored materials</span></li>
-                      <li className="flex gap-2"><span className="text-primary">•</span><span>Gain job search experience</span></li>
-                    </ul>
-                  </div>
+                <div className="bg-card border-l-4 border-primary rounded-lg p-6 hover:shadow-md transition-shadow">
+                  <h4 className="text-lg font-semibold text-primary mb-3">Professional Value</h4>
+                  <p className="text-muted-foreground italic text-sm mb-3">These outcomes will enhance my employability and readiness for future roles in business and cybersecurity.</p>
+                  <ul className="space-y-2 text-foreground/90">
+                    <li className="flex gap-2"><span className="text-primary">•</span><span>Strengthen existing skills and acquire new ones throughout project execution</span></li>
+                    <li className="flex gap-2"><span className="text-primary">•</span><span>Expanding my professional network via stakeholder engagement and feedback</span></li>
+                    <li className="flex gap-2"><span className="text-primary">•</span><span>Demonstrating authenticity and commitment through tailored, high-quality application materials</span></li>
+                    <li className="flex gap-2"><span className="text-primary">•</span><span>Gaining firsthand experience in the job search process and professional communication</span></li>
+                  </ul>
+                </div>
 
-                  <div className="bg-card border-l-4 border-accent rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <h4 className="text-lg font-semibold text-accent mb-3">Personal Value</h4>
-                    <ul className="space-y-2 text-sm text-foreground/80">
-                      <li className="flex gap-2"><span className="text-accent">•</span><span>Build confidence</span></li>
-                      <li className="flex gap-2"><span className="text-accent">•</span><span>Address imposter syndrome</span></li>
-                      <li className="flex gap-2"><span className="text-accent">•</span><span>Reinforce self-esteem</span></li>
-                      <li className="flex gap-2"><span className="text-accent">•</span><span>Maintain focus on goals</span></li>
-                    </ul>
-                  </div>
+                <div className="bg-card border-l-4 border-accent rounded-lg p-6 hover:shadow-md transition-shadow">
+                  <h4 className="text-lg font-semibold text-accent mb-3">Personal Value</h4>
+                  <p className="text-muted-foreground italic text-sm mb-3">These outcomes will reinforce resilience and motivation throughout the job search process.</p>
+                  <ul className="space-y-2 text-foreground/90">
+                    <li className="flex gap-2"><span className="text-accent">•</span><span>Building confidence through proactive engagement with new professionals</span></li>
+                    <li className="flex gap-2"><span className="text-accent">•</span><span>Addressing imposter syndrome through feedback and reflection</span></li>
+                    <li className="flex gap-2"><span className="text-accent">•</span><span>Reinforcing self-esteem by recognizing academic and professional progress</span></li>
+                    <li className="flex gap-2"><span className="text-accent">•</span><span>Maintaining focus by aligning daily actions with my mission and long-term goals</span></li>
+                  </ul>
+                </div>
 
-                  <div className="bg-card border-l-4 border-success rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <h4 className="text-lg font-semibold text-success mb-3">Learning Outcomes</h4>
-                    <ul className="space-y-2 text-sm text-foreground/80">
-                      <li className="flex gap-2"><span className="text-success">•</span><span>Resume & portfolio mastery</span></li>
-                      <li className="flex gap-2"><span className="text-success">•</span><span>Effective self-presentation</span></li>
-                      <li className="flex gap-2"><span className="text-success">•</span><span>Professional communication</span></li>
-                      <li className="flex gap-2"><span className="text-success">•</span><span>Relationship building</span></li>
-                    </ul>
-                  </div>
+                <div className="bg-card border-l-4 border-success rounded-lg p-6 hover:shadow-md transition-shadow">
+                  <h4 className="text-lg font-semibold text-success mb-3">Learning Outcomes</h4>
+                  <p className="text-muted-foreground italic text-sm mb-3">These outcomes will equip me with the practical and interpersonal skills needed for professional success.</p>
+                  <ul className="space-y-2 text-foreground/90">
+                    <li className="flex gap-2"><span className="text-success">•</span><span>Mastery in resume, cover letter, and portfolio development</span></li>
+                    <li className="flex gap-2"><span className="text-success">•</span><span>Effective self-presentation through networking events and digital platforms (LinkedIn, portfolio site)</span></li>
+                    <li className="flex gap-2"><span className="text-success">•</span><span>Clear and professional communication in interviews and correspondence</span></li>
+                    <li className="flex gap-2"><span className="text-success">•</span><span>Improved follow-up and relationship-building techniques that sustain professional connections</span></li>
+                  </ul>
                 </div>
               </CardContent>
             </Card>
