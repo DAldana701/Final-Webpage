@@ -44,15 +44,16 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
       <ProjectHeader />
       
-      <main className="container mx-auto px-6 py-12">
-        <div className="max-w-5xl mx-auto space-y-10">
+      <main className="container mx-auto px-6 py-xl">
+        <div className="max-w-5xl mx-auto space-y-lg">
           {/* Hero Section */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-primary/90 to-secondary shadow-elegant animate-fade-in">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-primary/90 to-accent shadow-elegant animate-fade-in">
             <div className="absolute inset-0 bg-grid-white/5" />
-            <div className="relative p-10">
+            <div className="absolute inset-0 bg-gradient-accent opacity-30" />
+            <div className="relative p-lg md:p-xl">
               <div className="flex items-start justify-between mb-8">
                 <div className="space-y-3">
                   <Badge className="bg-primary-foreground/20 text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/30">
@@ -70,7 +71,7 @@ const Home = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="bg-background/95 backdrop-blur-sm border-primary/20 shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+                <Card className="bg-glass backdrop-blur-md border-glass shadow-glass p-6 hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
                   <div className="space-y-3">
                     <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Student Information</h3>
                     <div className="space-y-2">
@@ -86,7 +87,7 @@ const Home = () => {
                   </div>
                 </Card>
 
-                <Card className="bg-background/95 backdrop-blur-sm border-secondary/20 shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+                <Card className="bg-glass backdrop-blur-md border-glass shadow-glass p-6 hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
                   <div className="space-y-3">
                     <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Project Overview</h3>
                     <div className="space-y-2">
@@ -109,16 +110,16 @@ const Home = () => {
           </div>
 
           {/* Documentation Sections */}
-          <div className="space-y-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-10 w-1.5 bg-gradient-primary rounded-full" />
+          <div className="space-y-md animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <div className="flex items-center gap-4 mb-md">
+              <div className="h-12 w-1.5 bg-gradient-to-b from-primary to-accent rounded-full shadow-md" />
               <div>
                 <h2 className="text-3xl font-bold text-foreground">Documentation Hub</h2>
-                <p className="text-muted-foreground">Access project deliverables and reports</p>
+                <p className="text-muted-foreground mt-1">Access project deliverables and reports</p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {projectLinks.map((link, index) => (
                 <Link
                   key={link.title}
@@ -129,17 +130,17 @@ const Home = () => {
                   <Card
                     className={`p-6 transition-all duration-300 animate-fade-in relative overflow-hidden ${
                       link.available
-                        ? "hover:scale-105 hover:shadow-elegant cursor-pointer border-l-4 border-l-primary/50 hover:border-l-primary"
-                        : "opacity-60 border-l-4 border-l-muted"
+                        ? "bg-glass backdrop-blur-md border-glass shadow-glass hover:-translate-y-2 hover:shadow-elegant cursor-pointer border-l-4 border-l-primary/50 hover:border-l-accent"
+                        : "opacity-60 border-l-4 border-l-muted bg-card/50 backdrop-blur-sm"
                     }`}
                   >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-primary opacity-5 rounded-full blur-2xl" />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-accent opacity-20 rounded-full blur-3xl" />
                     <div className="relative flex items-start gap-4">
                       <div
                         className={`p-4 rounded-xl transition-all duration-300 ${
                           link.available
-                            ? "bg-gradient-primary text-primary-foreground shadow-md group-hover:shadow-lg group-hover:scale-110"
-                            : "bg-muted text-muted-foreground"
+                            ? "bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md group-hover:shadow-elegant group-hover:scale-110"
+                            : "bg-muted/50 backdrop-blur-sm text-muted-foreground"
                         }`}
                       >
                         <link.icon className="h-7 w-7" />
