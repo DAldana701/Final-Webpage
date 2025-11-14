@@ -50,7 +50,7 @@ const Home = () => {
       <main className="container mx-auto px-6 py-xl">
         <div className="max-w-5xl mx-auto space-y-lg">
           {/* Hero Section */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-accent to-sky-400 bg-[length:200%_200%] animate-gradient-shift shadow-elegant animate-fade-in">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-purple-500 via-teal-400 to-sky-400 bg-[length:300%_100%] animate-gradient-shift shadow-elegant animate-fade-in">
             <div className="absolute inset-0 bg-grid-white/5" />
             <div className="absolute inset-0 bg-gradient-accent opacity-30" />
             <div className="relative p-lg md:p-xl">
