@@ -2,6 +2,7 @@ import { ProjectHeader } from "@/components/ProjectHeader";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Target, Briefcase, Layers, Users, Package, DollarSign, Wrench, Hammer, CheckCircle2 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { PageTransition } from "@/components/PageTransition";
 
 const ProjectCharter = () => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -66,8 +67,9 @@ const ProjectCharter = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <ProjectHeader />
+    <PageTransition>
+      <div className="min-h-screen bg-background">
+        <ProjectHeader />
       
       {/* Sticky Navigation */}
       <nav className="sticky top-[88px] z-40 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
@@ -750,7 +752,8 @@ const ProjectCharter = () => {
 
         </div>
       </main>
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 
