@@ -4,6 +4,7 @@ import { Calendar, CheckCircle2, AlertTriangle, TrendingUp, Target, FileText, Li
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { PageTransition } from "@/components/PageTransition";
 
 interface WeekReport {
   id: string;
@@ -38,8 +39,9 @@ const StatusReport = () => {
   const scrollToWeek = (weekId: string) => { const element = document.getElementById(weekId); if (element) { const offset = 160; const elementPosition = element.getBoundingClientRect().top; const offsetPosition = elementPosition + window.pageYOffset - offset; window.scrollTo({ top: offsetPosition, behavior: 'smooth' }); } };
 
   return (
-    <div className="min-h-screen bg-background">
-      <ProjectHeader />
+    <PageTransition>
+      <div className="min-h-screen bg-background">
+        <ProjectHeader />
       <nav className="sticky top-[88px] z-40 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
         <div className="container mx-auto px-6 py-3">
           <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
@@ -233,7 +235,8 @@ const StatusReport = () => {
           ))}
         </div>
       </main>
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 

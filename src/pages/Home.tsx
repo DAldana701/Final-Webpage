@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FileText, BarChart3, Star, Users, CheckCircle, Briefcase, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PageTransition } from "@/components/PageTransition";
 
 const Home = () => {
   const projectLinks = [
@@ -44,8 +45,9 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
-      <ProjectHeader />
+    <PageTransition>
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
+        <ProjectHeader />
       
       <main className="container mx-auto px-6 py-xl">
         <div className="max-w-5xl mx-auto space-y-lg">
@@ -173,7 +175,8 @@ const Home = () => {
           </div>
         </div>
       </main>
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 
