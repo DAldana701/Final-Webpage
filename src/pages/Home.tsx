@@ -71,7 +71,7 @@ const Home = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="bg-glass backdrop-blur-md border-glass shadow-glass p-6 hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
+                <Card className="bg-card border-border shadow-lg p-6 hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
                   <div className="space-y-3">
                     <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Student Information</h3>
                     <div className="space-y-2">
@@ -87,7 +87,7 @@ const Home = () => {
                   </div>
                 </Card>
 
-                <Card className="bg-glass backdrop-blur-md border-glass shadow-glass p-6 hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
+                <Card className="bg-card border-border shadow-lg p-6 hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
                   <div className="space-y-3">
                     <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Project Overview</h3>
                     <div className="space-y-2">
