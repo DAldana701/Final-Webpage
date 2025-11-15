@@ -46,15 +46,22 @@ const Home = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+        
         <ProjectHeader />
       
       <main className="container mx-auto px-6 py-xl">
         <div className="max-w-5xl mx-auto space-y-lg">
           {/* Hero Section */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-purple-500 via-teal-400 to-sky-400 bg-[length:300%_100%] animate-gradient-shift shadow-elegant animate-fade-in">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-purple-500 via-teal-400 to-sky-400 bg-[length:300%_100%] animate-gradient-shift shadow-elegant animate-fade-in group">
             <div className="absolute inset-0 bg-grid-white/5" />
             <div className="absolute inset-0 bg-gradient-accent opacity-30" />
+            {/* Floating orbs */}
+            <div className="absolute top-10 right-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse" />
+            <div className="absolute bottom-10 left-20 w-40 h-40 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
             <div className="relative p-lg md:p-xl">
               <div className="flex items-start justify-between mb-8">
                 <div className="space-y-3">
@@ -73,7 +80,7 @@ const Home = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="bg-card border-border shadow-lg p-6 hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
+                <Card className="bg-card/90 backdrop-blur-sm border-border shadow-lg p-6 hover:shadow-elegant hover:-translate-y-1 hover:border-primary/30 transition-all duration-300 group">
                   <div className="space-y-3">
                     <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Student Information</h3>
                     <div className="space-y-2">
@@ -89,7 +96,7 @@ const Home = () => {
                   </div>
                 </Card>
 
-                <Card className="bg-card border-border shadow-lg p-6 hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
+                <Card className="bg-card/90 backdrop-blur-sm border-border shadow-lg p-6 hover:shadow-elegant hover:-translate-y-1 hover:border-primary/30 transition-all duration-300 group">
                   <div className="space-y-3">
                     <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Project Overview</h3>
                     <div className="space-y-2">
@@ -112,11 +119,11 @@ const Home = () => {
           </div>
 
           {/* Documentation Sections */}
-          <div className="space-y-md animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <div className="space-y-md animate-fade-in relative" style={{ animationDelay: "0.1s" }}>
             <div className="flex items-center gap-4 mb-md">
-              <div className="h-12 w-1.5 bg-gradient-to-b from-primary to-accent rounded-full shadow-md" />
+              <div className="h-12 w-1.5 bg-gradient-to-b from-primary to-accent rounded-full shadow-md animate-pulse" />
               <div>
-                <h2 className="text-3xl font-bold text-foreground">Documentation Hub</h2>
+                <h2 className="text-3xl font-bold text-foreground bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">Documentation Hub</h2>
                 <p className="text-muted-foreground mt-1">Access project deliverables and reports</p>
               </div>
             </div>
@@ -132,11 +139,12 @@ const Home = () => {
                   <Card
                     className={`p-6 transition-all duration-300 animate-fade-in relative overflow-hidden ${
                       link.available
-                        ? "bg-glass backdrop-blur-md border-glass shadow-glass hover:-translate-y-2 hover:shadow-elegant cursor-pointer border-l-4 border-l-primary/50 hover:border-l-accent"
+                        ? "bg-glass backdrop-blur-md border-glass shadow-glass hover:-translate-y-2 hover:shadow-elegant cursor-pointer border-l-4 border-l-primary/50 hover:border-l-accent group"
                         : "opacity-60 border-l-4 border-l-muted bg-card/50 backdrop-blur-sm"
                     }`}
                   >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-accent opacity-20 rounded-full blur-3xl" />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-accent opacity-20 rounded-full blur-3xl group-hover:opacity-30 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative flex items-start gap-4">
                       <div
                         className={`p-4 rounded-xl transition-all duration-300 ${
