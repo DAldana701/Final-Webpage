@@ -8,8 +8,9 @@ export const ProjectHeader = () => {
   const isHomePage = location.pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-card shadow-sm">
-      <div className="container mx-auto px-6 py-4">
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-card/80 backdrop-blur-xl shadow-lg supports-[backdrop-filter]:bg-card/60">
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
+      <div className="container mx-auto px-6 py-4 relative">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-foreground">Project Management Dashboard</h1>
