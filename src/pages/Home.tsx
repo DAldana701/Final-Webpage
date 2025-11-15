@@ -4,14 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { FileText, BarChart3, Star, Users, CheckCircle, Briefcase, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageTransition } from "@/components/PageTransition";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Home = () => {
-  const heroAnimation = useScrollAnimation({ threshold: 0.2 });
-  const studentCardAnimation = useScrollAnimation({ threshold: 0.3 });
-  const projectCardAnimation = useScrollAnimation({ threshold: 0.3 });
-  const docsHeaderAnimation = useScrollAnimation({ threshold: 0.4 });
-  
   const projectLinks = [
     {
       title: "Charter",
@@ -59,174 +53,136 @@ const Home = () => {
         
         <ProjectHeader />
       
-        <main className="container mx-auto px-6 py-xl">
-          <div className="max-w-5xl mx-auto space-y-lg">
-            {/* Hero Section */}
-            <div 
-              ref={heroAnimation.ref}
-              className={`relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-purple-500 via-teal-400 to-sky-400 bg-[length:300%_100%] animate-gradient-shift shadow-elegant group transition-all duration-700 ${
-                heroAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
-            >
-              <div className="absolute inset-0 bg-grid-white/5" />
-              <div className="absolute inset-0 bg-gradient-accent opacity-30" />
-              {/* Floating orbs */}
-              <div className="absolute top-10 right-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse" />
-              <div className="absolute bottom-10 left-20 w-40 h-40 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
-              <div className="relative p-lg md:p-xl">
-                <div className="flex items-start justify-between mb-8">
+      <main className="container mx-auto px-6 py-xl">
+        <div className="max-w-5xl mx-auto space-y-lg">
+          {/* Hero Section */}
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-purple-500 via-teal-400 to-sky-400 bg-[length:300%_100%] animate-gradient-shift shadow-elegant animate-fade-in group">
+            <div className="absolute inset-0 bg-grid-white/5" />
+            <div className="absolute inset-0 bg-gradient-accent opacity-30" />
+            {/* Floating orbs */}
+            <div className="absolute top-10 right-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse" />
+            <div className="absolute bottom-10 left-20 w-40 h-40 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
+            <div className="relative p-lg md:p-xl">
+              <div className="flex items-start justify-between mb-8">
+                <div className="space-y-3">
+                  <Badge className="bg-primary-foreground/20 text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/30">
+                    <GraduationCap className="h-3 w-3 mr-1" />
+                    Career Development Project
+                  </Badge>
+                  <h1 className="text-5xl font-bold text-primary-foreground leading-tight">
+                    Professional Portfolio &<br />Project Documentation
+                  </h1>
+                  <div className="h-1.5 w-32 bg-primary-foreground/40 rounded-full" />
+                </div>
+                <div className="p-4 bg-primary-foreground/10 rounded-xl backdrop-blur-sm border border-primary-foreground/20">
+                  <Briefcase className="h-12 w-12 text-primary-foreground" />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="bg-card/90 backdrop-blur-sm border-border shadow-lg p-6 hover:shadow-elegant hover:-translate-y-1 hover:border-primary/30 transition-all duration-300 group">
                   <div className="space-y-3">
-                    <Badge className="bg-primary-foreground/20 text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/30">
-                      <GraduationCap className="h-3 w-3 mr-1" />
-                      Career Development Project
-                    </Badge>
-                    <h1 className="text-5xl font-bold text-primary-foreground leading-tight">
-                      Professional Portfolio &<br />Project Documentation
-                    </h1>
-                    <div className="h-1.5 w-32 bg-primary-foreground/40 rounded-full" />
-                  </div>
-                  <div className="p-4 bg-primary-foreground/10 rounded-xl backdrop-blur-sm border border-primary-foreground/20">
-                    <Briefcase className="h-12 w-12 text-primary-foreground" />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div
-                    ref={studentCardAnimation.ref}
-                    className={`transition-all duration-700 delay-100 ${
-                      studentCardAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                    }`}
-                  >
-                    <Card className="bg-card/90 backdrop-blur-sm border-border shadow-lg p-6 hover:shadow-elegant hover:-translate-y-1 hover:border-primary/30 transition-all duration-300 group h-full">
-                      <div className="space-y-3">
-                        <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Student Information</h3>
-                        <div className="space-y-2">
-                          <div>
-                            <p className="text-xs text-muted-foreground">Name</p>
-                            <p className="text-lg font-semibold text-foreground">Daniel Aldana</p>
-                          </div>
-                          <div>
-                            <p className="text-xs text-muted-foreground">Course</p>
-                            <p className="text-sm text-foreground">Managing Information Systems Projects</p>
-                          </div>
-                        </div>
+                    <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Student Information</h3>
+                    <div className="space-y-2">
+                      <div>
+                        <p className="text-xs text-muted-foreground">Name</p>
+                        <p className="text-lg font-semibold text-foreground">Daniel Aldana</p>
                       </div>
-                    </Card>
-                  </div>
-
-                  <div
-                    ref={projectCardAnimation.ref}
-                    className={`transition-all duration-700 delay-200 ${
-                      projectCardAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                    }`}
-                  >
-                    <Card className="bg-card/90 backdrop-blur-sm border-border shadow-lg p-6 hover:shadow-elegant hover:-translate-y-1 hover:border-primary/30 transition-all duration-300 group h-full">
-                      <div className="space-y-3">
-                        <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Project Overview</h3>
-                        <div className="space-y-2">
-                          <div>
-                            <p className="text-xs text-muted-foreground">Title</p>
-                            <p className="text-lg font-semibold text-foreground">Business-Align Job Hunt</p>
-                          </div>
-                          <div>
-                            <p className="text-xs text-muted-foreground">Objective</p>
-                            <p className="text-sm text-foreground">
-                              Conduct an accurate and honest job hunt to prepare for internships, part-time, 
-                              or entry-level opportunities in business and technology.
-                            </p>
-                          </div>
-                        </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground">Course</p>
+                        <p className="text-sm text-foreground">Managing Information Systems Projects</p>
                       </div>
-                    </Card>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
+                </Card>
 
-            {/* Documentation Sections */}
-            <div 
-              ref={docsHeaderAnimation.ref}
-              className={`space-y-md relative transition-all duration-700 ${
-                docsHeaderAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
-            >
-              <div className="flex items-center gap-4 mb-md">
-                <div className="h-12 w-1.5 bg-gradient-to-b from-primary to-accent rounded-full shadow-md animate-pulse" />
-                <div>
-                  <h2 className="text-3xl font-bold text-foreground bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">Documentation Hub</h2>
-                  <p className="text-muted-foreground mt-1">Access project deliverables and reports</p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {projectLinks.map((link, index) => {
-                  const LinkCard = () => {
-                    const cardAnimation = useScrollAnimation({ threshold: 0.2 });
-                    
-                    return (
-                      <div
-                        ref={cardAnimation.ref}
-                        className={`transition-all duration-700 ${
-                          cardAnimation.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                        }`}
-                        style={{ transitionDelay: `${index * 100}ms` }}
-                      >
-                        <Link
-                          to={link.href}
-                          className={`group block ${!link.available && "pointer-events-none"}`}
-                        >
-                          <Card
-                            className={`p-6 transition-all duration-300 relative overflow-hidden ${
-                              link.available
-                                ? "bg-glass backdrop-blur-md border-glass shadow-glass hover:-translate-y-2 hover:shadow-elegant cursor-pointer border-l-4 border-l-primary/50 hover:border-l-accent group"
-                                : "opacity-60 border-l-4 border-l-muted bg-card/50 backdrop-blur-sm"
-                            }`}
-                          >
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-accent opacity-20 rounded-full blur-3xl group-hover:opacity-30 transition-opacity" />
-                            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                            <div className="relative flex items-start gap-4">
-                              <div
-                                className={`p-4 rounded-xl transition-all duration-300 ${
-                                  link.available
-                                    ? "bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md group-hover:shadow-elegant group-hover:scale-110"
-                                    : "bg-muted/50 backdrop-blur-sm text-muted-foreground"
-                                }`}
-                              >
-                                <link.icon className="h-7 w-7" />
-                              </div>
-                              <div className="flex-1 space-y-2">
-                                <div className="flex items-start justify-between gap-2">
-                                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                                    {link.title}
-                                  </h3>
-                                  {!link.available && (
-                                    <Badge variant="secondary" className="text-xs">
-                                      Coming Soon
-                                    </Badge>
-                                  )}
-                                  {link.available && (
-                                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20">
-                                      Available
-                                    </Badge>
-                                  )}
-                                </div>
-                                <p className="text-sm text-muted-foreground leading-relaxed">
-                                  {link.description}
-                                </p>
-                              </div>
-                            </div>
-                          </Card>
-                        </Link>
+                <Card className="bg-card/90 backdrop-blur-sm border-border shadow-lg p-6 hover:shadow-elegant hover:-translate-y-1 hover:border-primary/30 transition-all duration-300 group">
+                  <div className="space-y-3">
+                    <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Project Overview</h3>
+                    <div className="space-y-2">
+                      <div>
+                        <p className="text-xs text-muted-foreground">Title</p>
+                        <p className="text-lg font-semibold text-foreground">Business-Align Job Hunt</p>
                       </div>
-                    );
-                  };
-                  
-                  return <LinkCard key={link.title} />;
-                })}
+                      <div>
+                        <p className="text-xs text-muted-foreground">Objective</p>
+                        <p className="text-sm text-foreground">
+                          Conduct an accurate and honest job hunt to prepare for internships, part-time, 
+                          or entry-level opportunities in business and technology.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
               </div>
             </div>
           </div>
-        </main>
+
+          {/* Documentation Sections */}
+          <div className="space-y-md animate-fade-in relative" style={{ animationDelay: "0.1s" }}>
+            <div className="flex items-center gap-4 mb-md">
+              <div className="h-12 w-1.5 bg-gradient-to-b from-primary to-accent rounded-full shadow-md animate-pulse" />
+              <div>
+                <h2 className="text-3xl font-bold text-foreground bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">Documentation Hub</h2>
+                <p className="text-muted-foreground mt-1">Access project deliverables and reports</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {projectLinks.map((link, index) => (
+                <Link
+                  key={link.title}
+                  to={link.href}
+                  className={`group ${!link.available && "pointer-events-none"}`}
+                  style={{ animationDelay: `${0.2 + index * 0.1}s` }}
+                >
+                  <Card
+                    className={`p-6 transition-all duration-300 animate-fade-in relative overflow-hidden ${
+                      link.available
+                        ? "bg-glass backdrop-blur-md border-glass shadow-glass hover:-translate-y-2 hover:shadow-elegant cursor-pointer border-l-4 border-l-primary/50 hover:border-l-accent group"
+                        : "opacity-60 border-l-4 border-l-muted bg-card/50 backdrop-blur-sm"
+                    }`}
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-accent opacity-20 rounded-full blur-3xl group-hover:opacity-30 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="relative flex items-start gap-4">
+                      <div
+                        className={`p-4 rounded-xl transition-all duration-300 ${
+                          link.available
+                            ? "bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md group-hover:shadow-elegant group-hover:scale-110"
+                            : "bg-muted/50 backdrop-blur-sm text-muted-foreground"
+                        }`}
+                      >
+                        <link.icon className="h-7 w-7" />
+                      </div>
+                      <div className="flex-1 space-y-2">
+                        <div className="flex items-start justify-between gap-2">
+                          <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                            {link.title}
+                          </h3>
+                          {!link.available && (
+                            <Badge variant="secondary" className="text-xs">
+                              Coming Soon
+                            </Badge>
+                          )}
+                          {link.available && (
+                            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20">
+                              Available
+                            </Badge>
+                          )}
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {link.description}
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </main>
       </div>
     </PageTransition>
   );
