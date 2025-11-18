@@ -13,6 +13,9 @@ const Home = () => {
       href: "/charter",
       description: "View project charter document",
       available: true,
+      accentColor: "from-blue-500/20 to-cyan-500/20",
+      iconGradient: "from-blue-500 to-cyan-500",
+      borderColor: "border-l-blue-500/50 hover:border-l-cyan-500",
     },
     {
       title: "Reports",
@@ -20,6 +23,9 @@ const Home = () => {
       href: "/status-report",
       description: "Weekly status reports",
       available: true,
+      accentColor: "from-emerald-500/20 to-teal-500/20",
+      iconGradient: "from-emerald-500 to-teal-500",
+      borderColor: "border-l-emerald-500/50 hover:border-l-teal-500",
     },
     {
       title: "STAR Stories",
@@ -27,6 +33,9 @@ const Home = () => {
       href: "/star-stories",
       description: "Situation, Task, Action, Result stories",
       available: false,
+      accentColor: "from-amber-500/20 to-orange-500/20",
+      iconGradient: "from-amber-500 to-orange-500",
+      borderColor: "border-l-muted",
     },
     {
       title: "Stakeholder Interviews",
@@ -34,6 +43,9 @@ const Home = () => {
       href: "/stakeholder-interviews",
       description: "Interview documentation",
       available: false,
+      accentColor: "from-purple-500/20 to-pink-500/20",
+      iconGradient: "from-purple-500 to-pink-500",
+      borderColor: "border-l-muted",
     },
     {
       title: "Closure Document",
@@ -41,6 +53,9 @@ const Home = () => {
       href: "/closure",
       description: "Project closure documentation",
       available: false,
+      accentColor: "from-indigo-500/20 to-violet-500/20",
+      iconGradient: "from-indigo-500 to-violet-500",
+      borderColor: "border-l-muted",
     },
   ];
 
@@ -139,17 +154,17 @@ const Home = () => {
                   <Card
                     className={`p-6 transition-all duration-300 animate-fade-in relative overflow-hidden ${
                       link.available
-                        ? "bg-glass backdrop-blur-md border-glass shadow-glass hover:-translate-y-2 hover:shadow-elegant cursor-pointer border-l-4 border-l-primary/50 hover:border-l-accent group"
+                        ? `bg-glass backdrop-blur-md border-glass shadow-glass hover:-translate-y-2 hover:shadow-elegant cursor-pointer border-l-4 ${link.borderColor} group`
                         : "opacity-60 border-l-4 border-l-muted bg-card/50 backdrop-blur-sm"
                     }`}
                   >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-accent opacity-20 rounded-full blur-3xl group-hover:opacity-30 transition-opacity" />
+                    <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${link.accentColor} rounded-full blur-3xl ${link.available ? 'group-hover:opacity-40' : 'opacity-20'} transition-opacity`} />
                     <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative flex items-start gap-4">
                       <div
                         className={`p-4 rounded-xl transition-all duration-300 ${
                           link.available
-                            ? "bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md group-hover:shadow-elegant group-hover:scale-110"
+                            ? `bg-gradient-to-br ${link.iconGradient} text-primary-foreground shadow-md group-hover:shadow-elegant group-hover:scale-110`
                             : "bg-muted/50 backdrop-blur-sm text-muted-foreground"
                         }`}
                       >
@@ -157,7 +172,7 @@ const Home = () => {
                       </div>
                       <div className="flex-1 space-y-2">
                         <div className="flex items-start justify-between gap-2">
-                          <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                          <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                             {link.title}
                           </h3>
                           {!link.available && (
