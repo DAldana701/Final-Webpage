@@ -152,7 +152,7 @@ const Home = () => {
                   style={{ animationDelay: `${0.2 + index * 0.1}s` }}
                 >
                   <Card
-                    className={`p-6 transition-all duration-300 animate-fade-in relative overflow-hidden ${
+                    className={`p-6 h-full transition-all duration-300 animate-fade-in relative overflow-hidden ${
                       link.available
                         ? `bg-glass backdrop-blur-md border-glass shadow-glass hover:-translate-y-2 hover:shadow-elegant cursor-pointer border-l-4 ${link.borderColor} group`
                         : "opacity-60 border-l-4 border-l-muted bg-card/50 backdrop-blur-sm"
@@ -172,7 +172,7 @@ const Home = () => {
                       </div>
                       <div className="flex-1 space-y-2">
                         <div className="flex items-start justify-between gap-2">
-                          <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                          <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-1">
                             {link.title}
                           </h3>
                           {!link.available && (
