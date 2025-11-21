@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import { FileText, Target, TrendingUp, Star } from "lucide-react";
 import { PageTransition } from "@/components/PageTransition";
 import { ProjectHeader } from "@/components/ProjectHeader";
+import { useState, useEffect } from "react";
 
 interface StarStory {
   title: string;
@@ -64,6 +65,42 @@ const starStories: StarStory[] = [
 ];
 
 const StarStories = () => {
+  const [activeStory, setActiveStory] = useState<string>("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("[data-story]");
+      let currentStory = "";
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          currentStory = section.getAttribute("data-story") || "";
+        }
+      });
+
+      setActiveStory(currentStory);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToStory = (index: number) => {
+    const element = document.querySelector(`[data-story="story-${index}"]`);
+    if (element) {
+      const offset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <PageTransition>
       <ProjectHeader />
@@ -104,123 +141,115 @@ const StarStories = () => {
             </div>
           </div>
 
-          {/* Navigation Menu */}
-          <Card className="p-6 mb-12 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20 shadow-xl animate-fade-in">
-            <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-foreground">
-              <Target className="w-5 h-5 text-primary" />
-              Quick Navigation
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {starStories.map((story, index) => (
-                <button
-                  key={index}
-                  onClick={() => {
-                    const element = document.getElementById(`story-${index}`);
-                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
-                  className="group p-4 rounded-lg border border-border bg-gradient-to-br from-background to-secondary/20 hover:from-primary/10 hover:to-accent/10 hover:border-primary/50 transition-all duration-300 text-left shadow-sm hover:shadow-md"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold text-sm shadow-md">
-                      {index + 1}
-                    </div>
-                    <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                      {story.title}
-                    </span>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </Card>
-
-          {/* Stories */}
-          <div className="space-y-12">
-            {starStories.map((story, index) => (
-              <div
-                key={index}
-                id={`story-${index}`}
-                className="relative animate-fade-in scroll-mt-8"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <Card className="p-8 bg-gradient-to-br from-card via-card to-secondary/10 border-l-4 border-l-primary shadow-lg hover:shadow-xl transition-all duration-300">
-                  {/* Story Header */}
-                  <div className="mb-6">
-                    <h2 className="text-2xl font-bold text-foreground mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                      {story.title}
-                    </h2>
-                    <Badge className="mb-2 bg-gradient-to-r from-primary/10 to-accent/10 text-foreground border-primary/30 font-medium">
-                      {story.source}
-                    </Badge>
-                    {story.prompt && (
-                      <div className="mt-4 p-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-lg border-l-4 border-accent">
-                        <p className="text-sm font-medium text-muted-foreground italic">
-                          <strong className="text-accent">Prompt:</strong> {story.prompt}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  <Separator className="my-6 bg-gradient-to-r from-transparent via-border to-transparent" />
-
-                  {/* STAR Sections */}
-                  <div className="space-y-6">
-                    {/* Situation */}
-                    <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-blue-500/5 to-blue-500/10 border-l-4 border-blue-500">
-                      <div className="flex items-center gap-2">
-                        <div className="p-2 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 shadow-md">
-                          <FileText className="w-5 h-5 text-white" />
-                        </div>
-                        <h3 className="text-lg font-semibold text-foreground">Situation</h3>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed pl-11">
-                        {story.situation}
-                      </p>
-                    </div>
-
-                    {/* Task */}
-                    <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-green-500/5 to-green-500/10 border-l-4 border-green-500">
-                      <div className="flex items-center gap-2">
-                        <div className="p-2 rounded-lg bg-gradient-to-br from-green-500 to-green-600 shadow-md">
-                          <Target className="w-5 h-5 text-white" />
-                        </div>
-                        <h3 className="text-lg font-semibold text-foreground">Task</h3>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed pl-11">
-                        {story.task}
-                      </p>
-                    </div>
-
-                    {/* Action */}
-                    <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-purple-500/5 to-purple-500/10 border-l-4 border-purple-500">
-                      <div className="flex items-center gap-2">
-                        <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 shadow-md">
-                          <TrendingUp className="w-5 h-5 text-white" />
-                        </div>
-                        <h3 className="text-lg font-semibold text-foreground">Action</h3>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed pl-11">
-                        {story.action}
-                      </p>
-                    </div>
-
-                    {/* Result */}
-                    <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-amber-500/5 to-amber-500/10 border-l-4 border-amber-500">
-                      <div className="flex items-center gap-2">
-                        <div className="p-2 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-md">
-                          <TrendingUp className="w-5 h-5 text-white" />
-                        </div>
-                        <h3 className="text-lg font-semibold text-foreground">Result</h3>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed pl-11">
-                        {story.result}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
+          {/* Sticky Navigation */}
+          <nav className="sticky top-[88px] z-40 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
+            <div className="container mx-auto px-6 py-3">
+              <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+                {starStories.map((story, index) => (
+                  <button
+                    key={index}
+                    onClick={() => scrollToStory(index)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
+                      activeStory === `story-${index}`
+                        ? "bg-primary text-primary-foreground shadow-md"
+                        : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
+                    }`}
+                  >
+                    <Star className="h-4 w-4" />
+                    Story {index + 1}
+                  </button>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          </nav>
         </div>
+
+        <main className="container mx-auto px-4 py-12 max-w-6xl space-y-12">
+          {starStories.map((story, index) => (
+            <Card
+              data-story={`story-${index}`}
+              key={index}
+              className="shadow-lg border border-border/50 hover:shadow-xl transition-all bg-gradient-to-br from-card via-card to-secondary/10 scroll-mt-24 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="p-8">
+                {/* Story Header */}
+                <div className="mb-6">
+                  <h2 className="text-2xl font-bold text-foreground mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    {story.title}
+                  </h2>
+                  <Badge className="mb-2 bg-gradient-to-r from-primary/10 to-accent/10 text-foreground border-primary/30 font-medium">
+                    {story.source}
+                  </Badge>
+                  {story.prompt && (
+                    <div className="mt-4 p-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-lg border-l-4 border-accent">
+                      <p className="text-sm font-medium text-muted-foreground italic">
+                        <strong className="text-accent">Prompt:</strong> {story.prompt}
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                <Separator className="my-6 bg-gradient-to-r from-transparent via-border to-transparent" />
+
+                {/* STAR Sections */}
+                <div className="space-y-6">
+                  {/* Situation */}
+                  <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-blue-500/5 to-blue-500/10 border-l-4 border-blue-500">
+                    <div className="flex items-center gap-2">
+                      <div className="p-2 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 shadow-md">
+                        <FileText className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground">Situation</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed pl-11">
+                      {story.situation}
+                    </p>
+                  </div>
+
+                  {/* Task */}
+                  <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-green-500/5 to-green-500/10 border-l-4 border-green-500">
+                    <div className="flex items-center gap-2">
+                      <div className="p-2 rounded-lg bg-gradient-to-br from-green-500 to-green-600 shadow-md">
+                        <Target className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground">Task</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed pl-11">
+                      {story.task}
+                    </p>
+                  </div>
+
+                  {/* Action */}
+                  <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-purple-500/5 to-purple-500/10 border-l-4 border-purple-500">
+                    <div className="flex items-center gap-2">
+                      <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 shadow-md">
+                        <TrendingUp className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground">Action</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed pl-11">
+                      {story.action}
+                    </p>
+                  </div>
+
+                  {/* Result */}
+                  <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-amber-500/5 to-amber-500/10 border-l-4 border-amber-500">
+                    <div className="flex items-center gap-2">
+                      <div className="p-2 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-md">
+                        <TrendingUp className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground">Result</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed pl-11">
+                      {story.result}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </main>
       </div>
     </PageTransition>
   );
