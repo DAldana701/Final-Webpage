@@ -104,6 +104,29 @@ const StarStories = () => {
   return (
     <PageTransition>
       <ProjectHeader />
+      
+      {/* Sticky Navigation */}
+      <nav className="sticky top-[88px] z-40 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
+        <div className="container mx-auto px-6 py-3">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+            {starStories.map((story, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToStory(index)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
+                  activeStory === `story-${index}`
+                    ? "bg-primary text-primary-foreground shadow-md"
+                    : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
+                }`}
+              >
+                <Star className="h-4 w-4" />
+                Story {index + 1}
+              </button>
+            ))}
+          </div>
+        </div>
+      </nav>
+
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5">
         <div className="container mx-auto px-4 py-12 max-w-6xl">
           {/* Header */}
@@ -140,31 +163,9 @@ const StarStories = () => {
               <div className="h-1 w-20 bg-gradient-to-l from-transparent via-accent to-accent rounded-full" />
             </div>
           </div>
-
-          {/* Sticky Navigation */}
-          <nav className="sticky top-[88px] z-40 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
-            <div className="container mx-auto px-6 py-3">
-              <div className="flex gap-2 overflow-x-auto scrollbar-hide">
-                {starStories.map((story, index) => (
-                  <button
-                    key={index}
-                    onClick={() => scrollToStory(index)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
-                      activeStory === `story-${index}`
-                        ? "bg-primary text-primary-foreground shadow-md"
-                        : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
-                    }`}
-                  >
-                    <Star className="h-4 w-4" />
-                    Story {index + 1}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </nav>
         </div>
 
-        <main className="container mx-auto px-4 py-12 max-w-6xl space-y-12">
+        <main className="container mx-auto px-4 pb-12 max-w-6xl space-y-12">
           {starStories.map((story, index) => (
             <Card
               data-story={`story-${index}`}
