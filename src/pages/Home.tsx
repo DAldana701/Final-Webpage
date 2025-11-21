@@ -32,10 +32,10 @@ const Home = () => {
       icon: Star,
       href: "/star-stories",
       description: "Situation, Task, Action, Result stories",
-      available: false,
+      available: true,
       accentColor: "from-amber-500/20 to-orange-500/20",
       iconGradient: "from-amber-500 to-orange-500",
-      borderColor: "border-l-muted",
+      borderColor: "border-l-amber-500/50 hover:border-l-orange-500",
     },
     {
       title: "Stakeholder Interviews",
