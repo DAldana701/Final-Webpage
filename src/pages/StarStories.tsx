@@ -78,7 +78,7 @@ const StarStories = () => {
           </div>
 
           {/* Best Practices Card */}
-          <Card className="p-6 mb-8 bg-glass backdrop-blur-md border-glass shadow-glass animate-fade-in">
+          <Card className="p-6 mb-8 bg-gradient-to-br from-card via-card to-primary/5 border-l-4 border-l-primary shadow-lg animate-fade-in">
             <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
               <Lightbulb className="w-5 h-5 text-primary" />
               STAR Story Best Practices
@@ -94,79 +94,105 @@ const StarStories = () => {
           </Card>
 
           {/* Stories */}
-          <div className="space-y-8">
+          <div className="space-y-12">
             {starStories.map((story, index) => (
-              <Card
+              <div
                 key={index}
-                className="p-8 bg-glass backdrop-blur-md border-glass shadow-glass hover:shadow-elegant transition-all duration-300 animate-fade-in"
+                className="relative animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Story Header */}
-                <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-foreground mb-3">
-                    {story.title}
-                  </h2>
-                  <Badge variant="secondary" className="mb-2">
-                    {story.source}
-                  </Badge>
-                  {story.prompt && (
-                    <div className="mt-4 p-4 bg-accent/10 rounded-lg border-l-4 border-primary">
-                      <p className="text-sm font-medium text-muted-foreground italic">
-                        <strong>Prompt:</strong> {story.prompt}
+                {/* Story number indicator */}
+                <div className="absolute -left-4 top-8 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg">
+                  {index + 1}
+                </div>
+
+                <Card className="p-8 pl-12 bg-gradient-to-br from-card via-card to-secondary/10 border-l-4 border-l-primary shadow-lg hover:shadow-xl transition-all duration-300">
+                  {/* Story Header */}
+                  <div className="mb-6">
+                    <h2 className="text-2xl font-bold text-foreground mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                      {story.title}
+                    </h2>
+                    <Badge className="mb-2 bg-gradient-to-r from-primary/20 to-accent/20 text-primary border-primary/30">
+                      {story.source}
+                    </Badge>
+                    {story.prompt && (
+                      <div className="mt-4 p-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-lg border-l-4 border-accent">
+                        <p className="text-sm font-medium text-muted-foreground italic">
+                          <strong className="text-accent">Prompt:</strong> {story.prompt}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+
+                  <Separator className="my-6 bg-gradient-to-r from-transparent via-border to-transparent" />
+
+                  {/* STAR Sections */}
+                  <div className="space-y-6">
+                    {/* Situation */}
+                    <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-blue-500/5 to-blue-500/10 border-l-4 border-blue-500">
+                      <div className="flex items-center gap-2">
+                        <div className="p-2 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 shadow-md">
+                          <FileText className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-foreground">Situation</h3>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed pl-11">
+                        {story.situation}
                       </p>
                     </div>
-                  )}
-                </div>
 
-                <Separator className="my-6" />
-
-                {/* STAR Sections */}
-                <div className="space-y-6">
-                  {/* Situation */}
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <FileText className="w-5 h-5 text-primary" />
-                      <h3 className="text-lg font-semibold text-foreground">Situation</h3>
+                    {/* Task */}
+                    <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-green-500/5 to-green-500/10 border-l-4 border-green-500">
+                      <div className="flex items-center gap-2">
+                        <div className="p-2 rounded-lg bg-gradient-to-br from-green-500 to-green-600 shadow-md">
+                          <Target className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-foreground">Task</h3>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed pl-11">
+                        {story.task}
+                      </p>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed pl-7">
-                      {story.situation}
-                    </p>
-                  </div>
 
-                  {/* Task */}
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <Target className="w-5 h-5 text-primary" />
-                      <h3 className="text-lg font-semibold text-foreground">Task</h3>
+                    {/* Action */}
+                    <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-purple-500/5 to-purple-500/10 border-l-4 border-purple-500">
+                      <div className="flex items-center gap-2">
+                        <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 shadow-md">
+                          <TrendingUp className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-foreground">Action</h3>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed pl-11">
+                        {story.action}
+                      </p>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed pl-7">
-                      {story.task}
-                    </p>
-                  </div>
 
-                  {/* Action */}
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <TrendingUp className="w-5 h-5 text-primary" />
-                      <h3 className="text-lg font-semibold text-foreground">Action</h3>
+                    {/* Result */}
+                    <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-amber-500/5 to-amber-500/10 border-l-4 border-amber-500">
+                      <div className="flex items-center gap-2">
+                        <div className="p-2 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-md">
+                          <TrendingUp className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-foreground">Result</h3>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed pl-11">
+                        {story.result}
+                      </p>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed pl-7">
-                      {story.action}
-                    </p>
                   </div>
+                </Card>
 
-                  {/* Result */}
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <TrendingUp className="w-5 h-5 text-accent" />
-                      <h3 className="text-lg font-semibold text-foreground">Result</h3>
+                {/* Divider between stories */}
+                {index < starStories.length - 1 && (
+                  <div className="mt-12 flex items-center gap-4">
+                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                    <div className="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-border">
+                      <span className="text-xs font-medium text-muted-foreground">Next Story</span>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed pl-7">
-                      {story.result}
-                    </p>
+                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
                   </div>
-                </div>
-              </Card>
+                )}
+              </div>
             ))}
           </div>
         </div>
