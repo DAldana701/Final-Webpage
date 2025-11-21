@@ -196,7 +196,7 @@ const StarStories = () => {
                 {/* STAR Sections */}
                 <div className="space-y-6">
                   {/* Situation */}
-                  <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-blue-500/5 to-blue-500/10 border-l-4 border-blue-500">
+                  <div className="space-y-2 p-4 rounded-lg bg-gradient-to-br from-blue-500/10 to-blue-500/15 border-l-4 border-blue-500">
                     <div className="flex items-center gap-2">
                       <div className="p-2 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 shadow-md">
                         <FileText className="w-5 h-5 text-white" />
