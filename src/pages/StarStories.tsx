@@ -179,7 +179,7 @@ const StarStories = () => {
                   <h2 className="text-2xl font-bold text-foreground mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     {story.title}
                   </h2>
-                  <Badge className="mb-2 bg-gradient-to-r from-primary/10 to-accent/10 text-foreground border-primary/30 font-medium">
+                  <Badge className="mb-2 bg-gradient-to-r from-primary/20 to-accent/20 text-foreground border-primary/40 font-medium">
                     {story.source}
                   </Badge>
                   {story.prompt && (
