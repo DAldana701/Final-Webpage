@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { FileText, Target, Lightbulb, TrendingUp } from "lucide-react";
 import { PageTransition } from "@/components/PageTransition";
+import { ProjectHeader } from "@/components/ProjectHeader";
 
 interface StarStory {
   title: string;
@@ -65,6 +66,7 @@ const starStories: StarStory[] = [
 const StarStories = () => {
   return (
     <PageTransition>
+      <ProjectHeader />
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5">
         <div className="container mx-auto px-4 py-12 max-w-6xl">
           {/* Header */}
@@ -181,17 +183,6 @@ const StarStories = () => {
                     </div>
                   </div>
                 </Card>
-
-                {/* Divider between stories */}
-                {index < starStories.length - 1 && (
-                  <div className="mt-12 flex items-center gap-4">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-                    <div className="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-border">
-                      <span className="text-xs font-medium text-muted-foreground">Next Story</span>
-                    </div>
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-                  </div>
-                )}
               </div>
             ))}
           </div>
