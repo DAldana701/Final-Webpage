@@ -104,20 +104,45 @@ const StarStories = () => {
             </div>
           </div>
 
+          {/* Navigation Menu */}
+          <Card className="p-6 mb-12 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20 shadow-xl animate-fade-in">
+            <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-foreground">
+              <Target className="w-5 h-5 text-primary" />
+              Quick Navigation
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {starStories.map((story, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    const element = document.getElementById(`story-${index}`);
+                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                  className="group p-4 rounded-lg border border-border bg-gradient-to-br from-background to-secondary/20 hover:from-primary/10 hover:to-accent/10 hover:border-primary/50 transition-all duration-300 text-left shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold text-sm shadow-md">
+                      {index + 1}
+                    </div>
+                    <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                      {story.title}
+                    </span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </Card>
+
           {/* Stories */}
           <div className="space-y-12">
             {starStories.map((story, index) => (
               <div
                 key={index}
-                className="relative animate-fade-in"
+                id={`story-${index}`}
+                className="relative animate-fade-in scroll-mt-8"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Story number indicator */}
-                <div className="absolute -left-4 top-8 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold text-lg shadow-lg">
-                  {index + 1}
-                </div>
-
-                <Card className="p-8 pl-12 bg-gradient-to-br from-card via-card to-secondary/10 border-l-4 border-l-primary shadow-lg hover:shadow-xl transition-all duration-300">
+                <Card className="p-8 bg-gradient-to-br from-card via-card to-secondary/10 border-l-4 border-l-primary shadow-lg hover:shadow-xl transition-all duration-300">
                   {/* Story Header */}
                   <div className="mb-6">
                     <h2 className="text-2xl font-bold text-foreground mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
