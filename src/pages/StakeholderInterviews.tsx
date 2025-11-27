@@ -59,6 +59,20 @@ const interviews = [
 ];
 
 const StakeholderInterviews = () => {
+  const scrollToInterview = (interviewId: number) => {
+    const element = document.querySelector(`[data-interview="${interviewId}"]`);
+    if (element) {
+      const offset = 160;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <PageTransition>
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20 relative overflow-hidden">
@@ -67,6 +81,28 @@ const StakeholderInterviews = () => {
         <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
         
         <ProjectHeader />
+        
+        {/* Sticky Interview Navigation */}
+        <nav className="sticky top-[88px] z-40 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
+          <div className="container mx-auto px-6 py-3">
+            <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
+              <div className="flex items-center gap-2 mr-2">
+                <MessageCircle className="h-4 w-4 text-primary" />
+                <span className="text-sm font-semibold text-foreground">Jump to:</span>
+              </div>
+              {interviews.map((interview) => (
+                <button
+                  key={interview.id}
+                  onClick={() => scrollToInterview(interview.id)}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
+                >
+                  <User className="h-4 w-4" />
+                  {interview.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        </nav>
         
         <main className="container mx-auto px-6 py-12 relative">
           {/* Hero Section */}
@@ -98,8 +134,9 @@ const StakeholderInterviews = () => {
           <div className="space-y-12 max-w-5xl mx-auto">
             {interviews.map((interview, index) => (
               <div 
-                key={interview.id} 
-                className="animate-fade-in"
+                key={interview.id}
+                data-interview={interview.id}
+                className="animate-fade-in scroll-mt-32"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 <Card className="border-border/50 bg-card/90 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-500 group overflow-hidden">
