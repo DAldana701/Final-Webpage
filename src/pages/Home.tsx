@@ -42,10 +42,10 @@ const Home = () => {
       icon: Users,
       href: "/stakeholder-interviews",
       description: "Interview documentation",
-      available: false,
+      available: true,
       accentColor: "from-purple-500/20 to-pink-500/20",
       iconGradient: "from-purple-500 to-pink-500",
-      borderColor: "border-l-muted",
+      borderColor: "border-l-purple-500/50 hover:border-l-pink-500",
     },
     {
       title: "Closure Document",
