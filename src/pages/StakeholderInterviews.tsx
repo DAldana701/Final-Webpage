@@ -75,10 +75,10 @@ const StakeholderInterviews = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20 relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20 relative">
         {/* Decorative background elements */}
-        <div className="absolute top-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse pointer-events-none" />
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDelay: "1s" }} />
         
         <ProjectHeader />
         
