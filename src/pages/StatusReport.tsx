@@ -1,7 +1,6 @@
 import { ProjectHeader } from "@/components/ProjectHeader";
 import { Card } from "@/components/ui/card";
-import { Calendar, CheckCircle2, AlertTriangle, TrendingUp, Target, FileText, ListChecks, BarChart3 } from "lucide-react";
-import { useState } from "react";
+import { BarChart3, CheckCircle2, AlertTriangle, TrendingUp, Target, FileText, ListChecks } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { PageTransition } from "@/components/PageTransition";
@@ -34,9 +33,6 @@ const weeklyReports: WeekReport[] = [
 ];
 
 const StatusReport = () => {
-  const [expandedWeeks, setExpandedWeeks] = useState<Set<string>>(new Set(["week12"]));
-  const toggleWeek = (weekId: string) => { setExpandedWeeks(prev => { const newSet = new Set(prev); if (newSet.has(weekId)) { newSet.delete(weekId); } else { newSet.add(weekId); } return newSet; }); };
-  const toggleAll = () => { if (expandedWeeks.size === weeklyReports.length) { setExpandedWeeks(new Set()); } else { setExpandedWeeks(new Set(weeklyReports.map(w => w.id))); } };
   const scrollToWeek = (weekId: string) => { const element = document.getElementById(weekId); if (element) { const offset = 160; const elementPosition = element.getBoundingClientRect().top; const offsetPosition = elementPosition + window.pageYOffset - offset; window.scrollTo({ top: offsetPosition, behavior: 'smooth' }); } };
 
   return (
@@ -46,10 +42,6 @@ const StatusReport = () => {
       <nav className="sticky top-[88px] z-40 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
         <div className="container mx-auto px-6 py-3">
           <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
-            <button onClick={toggleAll} className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary whitespace-nowrap">
-              <Calendar className="h-4 w-4" />{expandedWeeks.size === weeklyReports.length ? "Collapse All" : "Expand All"}
-            </button>
-            <div className="h-6 w-px bg-border" />
             {weeklyReports.map((report) => (<button key={report.id} onClick={() => scrollToWeek(report.id)} className="px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary whitespace-nowrap">Week {report.week}</button>))}
           </div>
         </div>
@@ -84,14 +76,13 @@ const StatusReport = () => {
               id={report.id}
               className="overflow-hidden transition-all duration-300 hover:shadow-xl border-2"
             >
-              {/* Week Header - Clickable */}
-              <button
-                onClick={() => toggleWeek(report.id)}
+              {/* Week Header */}
+              <div
                 className={cn(
-                  "w-full text-left transition-all duration-300 p-8 flex items-center justify-between",
+                  "w-full transition-all duration-300 p-8",
                   report.status === "on-track" 
-                    ? "bg-gradient-to-r from-success/20 via-success/10 to-success/5 hover:from-success/30 hover:via-success/15 hover:to-success/10 border-l-8 border-success" 
-                    : "bg-gradient-to-r from-warning/20 via-warning/10 to-warning/5 hover:from-warning/30 hover:via-warning/15 hover:to-warning/10 border-l-8 border-warning"
+                    ? "bg-gradient-to-r from-success/20 via-success/10 to-success/5 border-l-8 border-success" 
+                    : "bg-gradient-to-r from-warning/20 via-warning/10 to-warning/5 border-l-8 border-warning"
                 )}
               >
                 <div className="flex items-center gap-6">
@@ -115,17 +106,10 @@ const StatusReport = () => {
                     </div>
                   </div>
                 </div>
-                <div className={cn(
-                  "transition-transform duration-300 text-2xl p-3 rounded-lg",
-                  expandedWeeks.has(report.id) ? "rotate-180 bg-accent/20" : "bg-muted/30"
-                )}>
-                  ▼
-                </div>
-              </button>
+              </div>
 
-              {/* Week Content - Collapsible */}
-              {expandedWeeks.has(report.id) && (
-                <div className="p-8 space-y-8 animate-in fade-in slide-in-from-top-2 duration-300 bg-gradient-to-b from-card to-muted/10">
+              {/* Week Content */}
+              <div className="p-8 space-y-8 bg-gradient-to-b from-card to-muted/10">
                   {/* Executive Summary */}
                   <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-xl border-l-4 border-primary">
                     <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-3">
@@ -242,7 +226,6 @@ const StatusReport = () => {
                     </p>
                   </div>
                 </div>
-              )}
             </Card>
           ))}
         </div>
