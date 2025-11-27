@@ -2,7 +2,7 @@ import { PageTransition } from "@/components/PageTransition";
 import { ProjectHeader } from "@/components/ProjectHeader";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, Target, Lightbulb } from "lucide-react";
+import { Calendar, User, Target, Lightbulb, MessageCircle, Sparkles } from "lucide-react";
 
 const interviews = [
   {
@@ -61,81 +61,126 @@ const interviews = [
 const StakeholderInterviews = () => {
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+        
         <ProjectHeader />
         
-        <main className="container mx-auto px-6 py-12">
-          <div className="mb-12 text-center">
-            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+        <main className="container mx-auto px-6 py-12 relative">
+          {/* Hero Section */}
+          <div className="mb-16 text-center animate-fade-in">
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+              <MessageCircle className="h-4 w-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Professional Insights</span>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-purple-500 to-accent bg-clip-text text-transparent">
               Stakeholder Interviews
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Insights and perspectives from key project stakeholders
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Valuable perspectives and insights from key project stakeholders
             </p>
+            <div className="mt-6 flex items-center justify-center gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">{interviews.length}</div>
+                <div className="text-sm text-muted-foreground">Interviews</div>
+              </div>
+              <div className="h-12 w-px bg-border" />
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent">3</div>
+                <div className="text-sm text-muted-foreground">Stakeholders</div>
+              </div>
+            </div>
           </div>
 
-          <div className="space-y-8 max-w-5xl mx-auto">
-            {interviews.map((interview) => (
-              <Card key={interview.id} className="border-border/50 bg-card/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
-                <CardHeader className="space-y-4">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="space-y-2 flex-1">
-                      <CardTitle className="text-2xl flex items-center gap-2">
-                        <User className="h-5 w-5 text-primary" />
-                        {interview.name}
-                      </CardTitle>
-                      <CardDescription className="text-base">
-                        {interview.title}
-                      </CardDescription>
-                    </div>
-                    <Badge variant="secondary" className="flex items-center gap-1 px-3 py-1">
-                      <Calendar className="h-3 w-3" />
-                      {interview.date}
-                    </Badge>
-                  </div>
-                </CardHeader>
-
-                <CardContent className="space-y-6">
-                  {/* Selection Rationale */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <Target className="h-5 w-5 text-accent" />
-                      <h3 className="text-lg font-semibold text-foreground">Selection Rationale</h3>
-                    </div>
-                    <div className="pl-7 text-muted-foreground leading-relaxed">
-                      {interview.rationale}
-                    </div>
-                  </div>
-
-                  {/* Conversation Summary */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <div className="h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center">
-                        <div className="h-2 w-2 rounded-full bg-primary" />
+          {/* Interviews Grid */}
+          <div className="space-y-12 max-w-5xl mx-auto">
+            {interviews.map((interview, index) => (
+              <div 
+                key={interview.id} 
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
+                <Card className="border-border/50 bg-card/90 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-500 group overflow-hidden">
+                  {/* Decorative gradient overlay */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <CardHeader className="space-y-4 relative">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="space-y-3 flex-1">
+                        <div className="flex items-center gap-3">
+                          <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md group-hover:scale-110 transition-transform duration-300">
+                            <User className="h-6 w-6" />
+                          </div>
+                          <div>
+                            <CardTitle className="text-2xl group-hover:text-primary transition-colors">
+                              {interview.name}
+                            </CardTitle>
+                            <CardDescription className="text-base mt-1 flex items-center gap-2">
+                              <Sparkles className="h-3 w-3" />
+                              {interview.title}
+                            </CardDescription>
+                          </div>
+                        </div>
                       </div>
-                      <h3 className="text-lg font-semibold text-foreground">Conversation Summary</h3>
+                      <Badge className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/20 to-accent/20 border-primary/30 hover:from-primary/30 hover:to-accent/30 transition-all">
+                        <Calendar className="h-4 w-4" />
+                        <span className="font-medium">{interview.date}</span>
+                      </Badge>
                     </div>
-                    <div className="pl-7 space-y-4">
-                      {interview.summary.map((paragraph, idx) => (
-                        <p key={idx} className="text-muted-foreground leading-relaxed">
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
+                  </CardHeader>
 
-                  {/* Key Insights */}
-                  <div className="space-y-3 bg-accent/10 rounded-lg p-6 border border-accent/20">
-                    <div className="flex items-center gap-2">
-                      <Lightbulb className="h-5 w-5 text-accent" />
-                      <h3 className="text-lg font-semibold text-foreground">Key Insights</h3>
+                  <CardContent className="space-y-8 relative">
+                    {/* Selection Rationale */}
+                    <div className="space-y-4 p-6 rounded-xl bg-gradient-to-r from-primary/5 to-transparent border-l-4 border-primary group-hover:border-accent transition-colors duration-300">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 rounded-lg bg-primary/20">
+                          <Target className="h-5 w-5 text-primary" />
+                        </div>
+                        <h3 className="text-lg font-bold text-foreground">Selection Rationale</h3>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed pl-11">
+                        {interview.rationale}
+                      </p>
                     </div>
-                    <div className="pl-7 text-muted-foreground leading-relaxed">
-                      {interview.insights}
+
+                    {/* Conversation Summary */}
+                    <div className="space-y-4 p-6 rounded-xl bg-gradient-to-r from-accent/5 to-transparent border-l-4 border-accent group-hover:border-primary transition-colors duration-300">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 rounded-lg bg-accent/20">
+                          <MessageCircle className="h-5 w-5 text-accent" />
+                        </div>
+                        <h3 className="text-lg font-bold text-foreground">Conversation Summary</h3>
+                      </div>
+                      <div className="space-y-5 pl-11">
+                        {interview.summary.map((paragraph, idx) => (
+                          <div key={idx} className="relative">
+                            <div className="absolute -left-6 top-2 w-2 h-2 rounded-full bg-accent/40" />
+                            <p className="text-muted-foreground leading-relaxed">
+                              {paragraph}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+
+                    {/* Key Insights */}
+                    <div className="space-y-4 p-8 rounded-xl bg-gradient-to-br from-amber-500/10 via-accent/10 to-primary/10 border-2 border-accent/30 shadow-inner relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-transparent rounded-full blur-2xl" />
+                      <div className="flex items-center gap-3 relative">
+                        <div className="p-2.5 rounded-lg bg-gradient-to-br from-amber-500 to-accent text-white shadow-md">
+                          <Lightbulb className="h-5 w-5" />
+                        </div>
+                        <h3 className="text-lg font-bold text-foreground">Key Insights</h3>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed pl-11 relative">
+                        {interview.insights}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
         </main>
