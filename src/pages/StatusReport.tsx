@@ -1,6 +1,6 @@
 import { ProjectHeader } from "@/components/ProjectHeader";
 import { Card } from "@/components/ui/card";
-import { Calendar, CheckCircle2, AlertTriangle, TrendingUp, Target, FileText, ListChecks } from "lucide-react";
+import { Calendar, CheckCircle2, AlertTriangle, TrendingUp, Target, FileText, ListChecks, BarChart3 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -55,14 +55,25 @@ const StatusReport = () => {
         </div>
       </nav>
       <main className="container mx-auto px-6 py-8 max-w-5xl">
-        {/* Page Header */}
-        <div className="mb-8">
-          <div className="bg-gradient-to-r from-primary via-accent to-primary p-8 rounded-2xl shadow-lg mb-6">
-            <h1 className="text-4xl font-bold text-primary-foreground mb-3">Weekly Status Reports</h1>
-            <p className="text-lg text-primary-foreground/90">
-              Business-Aligned Job Hunt – Progress tracking from Week 6 to Week 12
-            </p>
+        {/* Hero Header Section */}
+        <div className="mb-12 text-center animate-fade-in relative">
+          {/* Decorative background elements */}
+          <div className="absolute inset-0 -z-10 overflow-hidden">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
           </div>
+          
+          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+            <BarChart3 className="h-4 w-4 text-primary" />
+            <span className="text-sm font-medium text-primary">Project Progress Tracking</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-purple-500 to-accent bg-clip-text text-transparent">
+            Weekly Status Reports
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Business-Aligned Job Hunt: Progress tracking from Week 6 to Week 13
+          </p>
         </div>
 
         {/* Weekly Reports */}
