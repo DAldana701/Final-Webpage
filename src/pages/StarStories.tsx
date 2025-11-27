@@ -147,7 +147,7 @@ const StarStories = () => {
               </div>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent animate-fade-in">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-500 to-amber-400 bg-clip-text text-transparent animate-fade-in">
               STAR Stories
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
