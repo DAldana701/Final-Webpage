@@ -133,10 +133,10 @@ const StakeholderInterviews = () => {
 
                   <CardContent className="space-y-8 relative">
                     {/* Selection Rationale */}
-                    <div className="space-y-4 p-6 rounded-xl bg-gradient-to-r from-primary/5 to-transparent border-l-4 border-primary group-hover:border-accent transition-colors duration-300">
+                    <div className="space-y-4 p-6 rounded-xl bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-transparent border-l-4 border-purple-500 group-hover:border-pink-500 transition-colors duration-300">
                       <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-primary/20">
-                          <Target className="h-5 w-5 text-primary" />
+                        <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20">
+                          <Target className="h-5 w-5 text-purple-600" />
                         </div>
                         <h3 className="text-lg font-bold text-foreground">Selection Rationale</h3>
                       </div>
@@ -146,17 +146,17 @@ const StakeholderInterviews = () => {
                     </div>
 
                     {/* Conversation Summary */}
-                    <div className="space-y-4 p-6 rounded-xl bg-gradient-to-r from-accent/5 to-transparent border-l-4 border-accent group-hover:border-primary transition-colors duration-300">
+                    <div className="space-y-4 p-6 rounded-xl bg-gradient-to-r from-teal-500/10 via-cyan-500/10 to-transparent border-l-4 border-teal-500 group-hover:border-cyan-500 transition-colors duration-300">
                       <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-accent/20">
-                          <MessageCircle className="h-5 w-5 text-accent" />
+                        <div className="p-2 rounded-lg bg-gradient-to-br from-teal-500/20 to-cyan-500/20">
+                          <MessageCircle className="h-5 w-5 text-teal-600" />
                         </div>
                         <h3 className="text-lg font-bold text-foreground">Conversation Summary</h3>
                       </div>
                       <div className="space-y-5 pl-11">
                         {interview.summary.map((paragraph, idx) => (
                           <div key={idx} className="relative">
-                            <div className="absolute -left-6 top-2 w-2 h-2 rounded-full bg-accent/40" />
+                            <div className="absolute -left-6 top-2 w-2 h-2 rounded-full bg-teal-500/60" />
                             <p className="text-muted-foreground leading-relaxed">
                               {paragraph}
                             </p>
@@ -166,10 +166,10 @@ const StakeholderInterviews = () => {
                     </div>
 
                     {/* Key Insights */}
-                    <div className="space-y-4 p-8 rounded-xl bg-gradient-to-br from-amber-500/10 via-accent/10 to-primary/10 border-2 border-accent/30 shadow-inner relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-transparent rounded-full blur-2xl" />
+                    <div className="space-y-4 p-8 rounded-xl bg-gradient-to-br from-amber-500/10 via-orange-500/10 to-yellow-500/10 border-2 border-amber-500/30 shadow-inner relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-orange-400/20 rounded-full blur-2xl" />
                       <div className="flex items-center gap-3 relative">
-                        <div className="p-2.5 rounded-lg bg-gradient-to-br from-amber-500 to-accent text-white shadow-md">
+                        <div className="p-2.5 rounded-lg bg-gradient-to-br from-amber-500 to-orange-500 text-white shadow-md">
                           <Lightbulb className="h-5 w-5" />
                         </div>
                         <h3 className="text-lg font-bold text-foreground">Key Insights</h3>
