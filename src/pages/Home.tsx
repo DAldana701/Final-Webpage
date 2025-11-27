@@ -13,7 +13,7 @@ const Home = () => {
       href: "/charter",
       description: "View project charter document",
       available: true,
-      accentColor: "from-blue-500/20 to-cyan-500/20",
+      accentColor: "from-blue-500/40 via-cyan-500/30 to-blue-400/40",
       iconGradient: "from-blue-500 to-cyan-500",
       borderColor: "border-l-blue-500/50 hover:border-l-cyan-500",
     },
@@ -23,7 +23,7 @@ const Home = () => {
       href: "/status-report",
       description: "Weekly status reports",
       available: true,
-      accentColor: "from-emerald-500/20 to-teal-500/20",
+      accentColor: "from-emerald-500/50 via-teal-500/40 to-emerald-400/50",
       iconGradient: "from-emerald-500 to-teal-500",
       borderColor: "border-l-emerald-500/50 hover:border-l-teal-500",
     },
@@ -33,7 +33,7 @@ const Home = () => {
       href: "/star-stories",
       description: "Situation, Task, Action, Result stories",
       available: true,
-      accentColor: "from-amber-500/20 to-orange-500/20",
+      accentColor: "from-amber-500/50 via-orange-500/40 to-amber-400/50",
       iconGradient: "from-amber-500 to-orange-500",
       borderColor: "border-l-amber-500/50 hover:border-l-orange-500",
     },
@@ -43,7 +43,7 @@ const Home = () => {
       href: "/stakeholder-interviews",
       description: "Interview documentation",
       available: true,
-      accentColor: "from-purple-500/20 to-pink-500/20",
+      accentColor: "from-purple-500/40 via-pink-500/30 to-purple-400/40",
       iconGradient: "from-purple-500 to-pink-500",
       borderColor: "border-l-purple-500/50 hover:border-l-pink-500",
     },
@@ -158,7 +158,7 @@ const Home = () => {
                         : "opacity-60 border-l-4 border-l-muted bg-card/50 backdrop-blur-sm"
                     }`}
                   >
-                    <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${link.accentColor} rounded-full blur-3xl ${link.available ? 'group-hover:opacity-40' : 'opacity-20'} transition-opacity`} />
+                    <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${link.accentColor} rounded-full blur-2xl ${link.available ? 'opacity-100 group-hover:opacity-80' : 'opacity-20'} transition-opacity`} />
                     <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative flex items-start gap-4">
                       <div
