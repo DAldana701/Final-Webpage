@@ -94,6 +94,27 @@ const ProjectCharter = () => {
       </nav>
       
       <main className="container mx-auto px-6 py-12 max-w-7xl">
+        {/* Hero Header Section */}
+        <div className="mb-16 text-center animate-fade-in relative">
+          {/* Decorative background elements */}
+          <div className="absolute inset-0 -z-10 overflow-hidden">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+          </div>
+          
+          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+            <FileText className="h-4 w-4 text-primary" />
+            <span className="text-sm font-medium text-primary">Project Documentation</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-purple-500 to-accent bg-clip-text text-transparent">
+            Project Charter
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Business-Aligned Job Hunt: A comprehensive roadmap for achieving career-aligned opportunities
+          </p>
+        </div>
+        
         {/* Student Information */}
         <section data-section="info" className="mb-12 scroll-mt-24">
           <Card className="shadow-md border border-border/50 hover:shadow-lg transition-all bg-gradient-to-br from-card via-card to-secondary/10">
