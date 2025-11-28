@@ -143,14 +143,14 @@ const StatusReport = () => {
                       <AlertTriangle className="h-6 w-6 text-warning" />
                       Issues & Risks / Mitigations
                     </h3>
-                    <div className="space-y-3 text-muted-foreground">
-                      <div className="bg-card/50 p-4 rounded-lg">
+                    <div className="space-y-2 text-muted-foreground">
+                      <div className="bg-card/50 p-3 rounded-lg">
                         <p><strong className="text-foreground">Issues:</strong> {report.issuesRisks.issues}</p>
                       </div>
-                      <div className="bg-card/50 p-4 rounded-lg">
+                      <div className="bg-card/50 p-3 rounded-lg">
                         <p><strong className="text-foreground">Risks:</strong> {report.issuesRisks.risks}</p>
                       </div>
-                      <div className="bg-card/50 p-4 rounded-lg">
+                      <div className="bg-card/50 p-3 rounded-lg">
                         <p><strong className="text-foreground">Mitigation:</strong> {report.issuesRisks.mitigation}</p>
                       </div>
                     </div>
@@ -199,7 +199,7 @@ const StatusReport = () => {
 
                   {/* Project Health */}
                   <div className={cn(
-                    "p-6 rounded-xl border-l-4",
+                    "p-5 rounded-xl border-l-4",
                     report.status === "on-track" 
                       ? "bg-gradient-to-r from-success/10 to-success/5 border-success" 
                       : "bg-gradient-to-r from-warning/10 to-warning/5 border-warning"
@@ -216,7 +216,7 @@ const StatusReport = () => {
                   </div>
 
                   {/* Reflection */}
-                  <div className="pt-6 border-t-4 border-border bg-gradient-to-r from-secondary/5 to-accent/5 p-6 rounded-xl">
+                  <div className="pt-6 border-t-4 border-border bg-gradient-to-br from-blue-50/50 via-cyan-50/30 to-sky-50/40 dark:from-blue-950/20 dark:via-cyan-950/10 dark:to-sky-950/15 p-6 rounded-xl">
                     <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-3">
                       <span className="text-2xl">💭</span>
                       Reflection
