@@ -69,7 +69,7 @@ const StatusReport = () => {
         </div>
 
         {/* Weekly Reports */}
-        <div className="space-y-6">
+        <div className="space-y-16">
           {weeklyReports.map((report) => (
             <Card 
               key={report.id} 
@@ -224,6 +224,15 @@ const StatusReport = () => {
                     <p className="text-muted-foreground leading-relaxed text-base italic">
                       {report.reflection}
                     </p>
+                  </div>
+                </div>
+
+                {/* Report Footer */}
+                <div className="px-8 py-4 bg-muted/30 border-t border-border/50">
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <div className="h-px flex-1 bg-border/30" />
+                    <span className="font-medium">End of Week {report.week} Report</span>
+                    <div className="h-px flex-1 bg-border/30" />
                   </div>
                 </div>
             </Card>
