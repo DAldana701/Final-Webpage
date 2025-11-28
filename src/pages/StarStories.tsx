@@ -137,13 +137,19 @@ const StarStories = () => {
               <div className="absolute top-0 right-1/4 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
             </div>
             
-            {/* Star icon decoration */}
-            <div className="flex justify-center mb-6">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent blur-xl opacity-50" />
-                <div className="relative p-4 rounded-2xl bg-gradient-to-br from-primary via-primary to-accent shadow-2xl">
-                  <Star className="w-12 h-12 text-primary-foreground fill-primary-foreground" />
-                </div>
+            {/* Decorative text bubbles */}
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              <div className="px-6 py-3 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30 backdrop-blur-sm">
+                <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Situation</span>
+              </div>
+              <div className="px-6 py-3 rounded-full bg-gradient-to-r from-accent/20 to-accent/10 border border-accent/30 backdrop-blur-sm">
+                <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Task</span>
+              </div>
+              <div className="px-6 py-3 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30 backdrop-blur-sm">
+                <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Action</span>
+              </div>
+              <div className="px-6 py-3 rounded-full bg-gradient-to-r from-accent/20 to-accent/10 border border-accent/30 backdrop-blur-sm">
+                <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Result</span>
               </div>
             </div>
 
