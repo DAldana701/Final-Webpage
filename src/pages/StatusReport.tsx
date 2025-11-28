@@ -79,28 +79,28 @@ const StatusReport = () => {
               {/* Week Header */}
               <div
                 className={cn(
-                  "w-full transition-all duration-300 p-8",
+                  "w-full transition-all duration-300 p-5",
                   report.status === "on-track" 
-                    ? "bg-gradient-to-r from-success/20 via-success/10 to-success/5 border-l-8 border-success" 
-                    : "bg-gradient-to-r from-warning/20 via-warning/10 to-warning/5 border-l-8 border-warning"
+                    ? "bg-gradient-to-r from-success/20 via-success/10 to-success/5 border-l-4 border-success" 
+                    : "bg-gradient-to-r from-warning/20 via-warning/10 to-warning/5 border-l-4 border-warning"
                 )}
               >
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-4">
                   <div className={cn(
-                    "text-5xl p-4 rounded-xl shadow-lg",
+                    "text-3xl p-3 rounded-lg shadow-md",
                     report.status === "on-track" ? "bg-success/20" : "bg-warning/20"
                   )}>
                     {report.statusEmoji}
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-foreground mb-2">
+                    <h2 className="text-xl font-bold text-foreground mb-1.5">
                       Week {report.week} Status Report
                     </h2>
-                    <div className="flex items-center gap-3">
-                      <Badge variant={report.status === "on-track" ? "default" : "destructive"} className="text-base px-4 py-1">
+                    <div className="flex items-center gap-2">
+                      <Badge variant={report.status === "on-track" ? "default" : "destructive"} className="text-sm px-3 py-0.5">
                         {report.dateRange}
                       </Badge>
-                      <Badge variant={report.status === "on-track" ? "default" : "secondary"} className="text-base px-4 py-1">
+                      <Badge variant={report.status === "on-track" ? "default" : "secondary"} className="text-sm px-3 py-0.5">
                         {report.status === "on-track" ? "✅ On Track" : "⚠️ At Risk"}
                       </Badge>
                     </div>
