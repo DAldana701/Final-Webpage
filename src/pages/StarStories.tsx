@@ -137,20 +137,9 @@ const StarStories = () => {
               <div className="absolute top-0 right-1/4 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
             </div>
             
-            {/* Decorative text bubbles */}
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              <div className="px-6 py-3 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30 backdrop-blur-sm">
-                <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Situation</span>
-              </div>
-              <div className="px-6 py-3 rounded-full bg-gradient-to-r from-accent/20 to-accent/10 border border-accent/30 backdrop-blur-sm">
-                <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Task</span>
-              </div>
-              <div className="px-6 py-3 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30 backdrop-blur-sm">
-                <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Action</span>
-              </div>
-              <div className="px-6 py-3 rounded-full bg-gradient-to-r from-accent/20 to-accent/10 border border-accent/30 backdrop-blur-sm">
-                <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Result</span>
-              </div>
+            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+              <Star className="h-4 w-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Professional Development</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-500 to-amber-400 bg-clip-text text-transparent animate-fade-in">
