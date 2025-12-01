@@ -52,10 +52,10 @@ const Home = () => {
       icon: CheckCircle,
       href: "/closure",
       description: "Project closure documentation",
-      available: false,
+      available: true,
       accentColor: "from-indigo-500/20 to-violet-500/20",
       iconGradient: "from-indigo-500 to-violet-500",
-      borderColor: "border-l-muted",
+      borderColor: "border-l-indigo-500/50 hover:border-l-violet-500",
     },
   ];
 
@@ -180,7 +180,12 @@ const Home = () => {
                               Coming Soon
                             </Badge>
                           )}
-                          {link.available && (
+                          {link.available && link.title === "Closure Document" && (
+                            <Badge variant="secondary" className="bg-amber-500/10 text-amber-600 border-amber-500/20">
+                              In progress
+                            </Badge>
+                          )}
+                          {link.available && link.title !== "Closure Document" && (
                             <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20">
                               Available
                             </Badge>
