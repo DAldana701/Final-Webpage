@@ -9,6 +9,7 @@ import ProjectCharter from "./pages/ProjectCharter";
 import StatusReport from "./pages/StatusReport";
 import StarStories from "./pages/StarStories";
 import StakeholderInterviews from "./pages/StakeholderInterviews";
+import ClosureDocument from "./pages/ClosureDocument";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/status-report" element={<StatusReport />} />
           <Route path="/star-stories" element={<StarStories />} />
           <Route path="/stakeholder-interviews" element={<StakeholderInterviews />} />
+          <Route path="/closure" element={<ClosureDocument />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
