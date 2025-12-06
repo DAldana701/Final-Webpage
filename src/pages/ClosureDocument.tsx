@@ -148,9 +148,6 @@ const ClosureDocument = () => {
                   <FileCheck className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">Project Information</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -208,9 +205,6 @@ const ClosureDocument = () => {
                   <Package className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">Deliverable Summary</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="overflow-x-auto">
@@ -313,9 +307,6 @@ const ClosureDocument = () => {
                   <History className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">Change Log</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="overflow-x-auto">
@@ -352,9 +343,6 @@ const ClosureDocument = () => {
                   <TrendingUp className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">Performance Analysis</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="space-y-6">
@@ -393,9 +381,6 @@ const ClosureDocument = () => {
                   <Users className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">Stakeholder Management</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="space-y-4">
@@ -424,9 +409,6 @@ const ClosureDocument = () => {
                   <AlertTriangle className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">Risk and Issue Summary</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="space-y-4">
@@ -468,9 +450,6 @@ const ClosureDocument = () => {
                   <CheckCircle className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">What Went Well?</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="space-y-4">
@@ -505,9 +484,6 @@ const ClosureDocument = () => {
                   <XCircle className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">What Didn't Go Well?</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="space-y-4">
@@ -542,9 +518,6 @@ const ClosureDocument = () => {
                   <RefreshCw className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">What Would You Do Differently?</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="space-y-4">
@@ -579,9 +552,6 @@ const ClosureDocument = () => {
                   <BookOpen className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">Lessons Learned Register</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="overflow-x-auto">
@@ -646,9 +616,6 @@ const ClosureDocument = () => {
                   <Lightbulb className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">Key Takeaways for Future Projects</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="space-y-4">
@@ -689,9 +656,6 @@ const ClosureDocument = () => {
                   <PenTool className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">Formal Sign-Off</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="space-y-6">
@@ -738,15 +702,12 @@ const ClosureDocument = () => {
                   <Award className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">Recognition</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="p-4 bg-gradient-to-br from-indigo-500/10 to-violet-500/10 rounded-lg border border-indigo-500/20">
                   <h4 className="font-semibold text-foreground mb-2">Tech Owl Teammates</h4>
-                  <p className="text-sm text-indigo-500 mb-3">Angel, Fatima, Abner, Berenice</p>
+                  <p className="text-sm text-indigo-500 mb-3">Angel Contreras, Fatima Zahra Anammi, Abner Bonilla, Berenice Fuentes</p>
                   <p className="text-muted-foreground text-sm">
                     I'm grateful for the opportunity to connect and get to know them. For this project, I am grateful for the feedback I received throughout the semester. My team provided scope suggestions and recommendations, and we met once a week to discuss our project progress.
                   </p>
@@ -780,9 +741,6 @@ const ClosureDocument = () => {
                   <ArrowRight className="h-6 w-6" />
                 </div>
                 <h2 className="text-xl font-semibold text-foreground">What's Next</h2>
-                <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">
-                  Complete
-                </Badge>
               </div>
               
               <div className="space-y-4">
