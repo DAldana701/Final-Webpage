@@ -71,7 +71,7 @@ const Home = () => {
       <main className="container mx-auto px-6 py-xl">
         <div className="max-w-5xl mx-auto space-y-lg">
           {/* Hero Section */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-cyan-500 via-emerald-500 via-amber-500 via-pink-500 to-violet-500 bg-[length:600%_100%] animate-gradient-shift-slow shadow-elegant animate-fade-in group">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-sky-500 via-cyan-500 via-teal-500 via-emerald-500 via-amber-500 via-pink-500 to-violet-500 bg-[length:800%_100%] animate-gradient-shift-slower shadow-elegant animate-fade-in group">
             <div className="absolute inset-0 bg-grid-white/5" />
             <div className="absolute inset-0 bg-gradient-accent opacity-30" />
             {/* Floating orbs */}
