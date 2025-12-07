@@ -180,12 +180,7 @@ const Home = () => {
                               Coming Soon
                             </Badge>
                           )}
-                          {link.available && link.title === "Closure Document" && (
-                            <Badge variant="secondary" className="bg-amber-500/10 text-amber-600 border-amber-500/20">
-                              In progress
-                            </Badge>
-                          )}
-                          {link.available && link.title !== "Closure Document" && (
+                          {link.available && (
                             <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20">
                               Available
                             </Badge>
