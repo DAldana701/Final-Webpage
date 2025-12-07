@@ -1,6 +1,6 @@
 import { NavLink } from "./NavLink";
 import { Link, useLocation } from "react-router-dom";
-import { FileText, BarChart3, Home } from "lucide-react";
+import { FileText, BarChart3, Home, Star, Users, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const ProjectHeader = () => {
@@ -27,10 +27,10 @@ export const ProjectHeader = () => {
           )}
 
           {isHomePage && (
-            <nav className="flex gap-2">
+            <nav className="flex gap-1">
               <NavLink
                 to="/charter"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary text-sm"
                 activeClassName="bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
               >
                 <FileText className="h-4 w-4" />
@@ -38,11 +38,35 @@ export const ProjectHeader = () => {
               </NavLink>
               <NavLink
                 to="/status-report"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary text-sm"
                 activeClassName="bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
               >
                 <BarChart3 className="h-4 w-4" />
-                <span className="font-medium">Status Report</span>
+                <span className="font-medium">Status</span>
+              </NavLink>
+              <NavLink
+                to="/star-stories"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary text-sm"
+                activeClassName="bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
+              >
+                <Star className="h-4 w-4" />
+                <span className="font-medium">STAR</span>
+              </NavLink>
+              <NavLink
+                to="/stakeholder-interviews"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary text-sm"
+                activeClassName="bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
+              >
+                <Users className="h-4 w-4" />
+                <span className="font-medium">Interviews</span>
+              </NavLink>
+              <NavLink
+                to="/closure"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary text-sm"
+                activeClassName="bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
+              >
+                <CheckCircle className="h-4 w-4" />
+                <span className="font-medium">Closure</span>
               </NavLink>
             </nav>
           )}
