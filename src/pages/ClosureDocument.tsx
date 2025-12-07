@@ -190,7 +190,7 @@ const ClosureDocument = () => {
               <div className="mt-6 p-4 bg-secondary/30 rounded-lg">
                 <h3 className="font-semibold text-foreground mb-2">Closing Summary</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Overall, I'm proud of my performance and execution throughout this semester-long project. Some of the goals were met, including expanding my LinkedIn profile by at least two connections and practicing and holding three interviews, encouraging the interviewer to ask me questions when I explained my project to them. Expanding my network and strengthening my communication skills was a great success; however, maintaining confidence and motivation proved to be a challenge, mainly when life's issues arose during the execution phase. Although I did not fully complete what I needed to deliver, I believe the project was overall a success, with a satisfaction and success rating of <span className="font-semibold text-indigo-500">7 out of 10</span>.
+                  Overall, I am proud of my performance and execution throughout this semester-long project. Several goals were achieved, including expanding my LinkedIn network by at least two connections and conducting three interviews where I encouraged interviewers to ask questions as I explained my project. Growing my network and strengthening my communication skills were significant successes; however, maintaining confidence and motivation proved challenging, particularly when personal issues arose during the execution phase. Although I did not fully complete all planned deliverables, I believe the project was an overall success, with a satisfaction and success rating of <span className="font-semibold text-indigo-500">7 out of 10</span>.
                 </p>
               </div>
             </Card>
@@ -249,8 +249,8 @@ const ClosureDocument = () => {
                       </TableCell>
                       <TableCell className="text-muted-foreground">
                         <ul className="list-disc list-inside space-y-1 text-sm">
-                          <li>Communicated with new LinkedIn connections in person/online with two of them to maintain relationship</li>
-                          <li>Documented three reflections for each interview executed</li>
+                          <li>Communicated with new LinkedIn connections both in person and online, maintaining relationships with two of them</li>
+                          <li>Documented three reflections for each interview conducted</li>
                         </ul>
                       </TableCell>
                       <TableCell>
@@ -267,7 +267,7 @@ const ClosureDocument = () => {
                         </ul>
                       </TableCell>
                       <TableCell className="text-muted-foreground text-sm">
-                        Minimal to no progress conducted
+                        Minimal to no progress made
                       </TableCell>
                       <TableCell>
                         <Badge className="bg-red-500/10 text-red-600 border-red-500/20">Red</Badge>
@@ -284,8 +284,8 @@ const ClosureDocument = () => {
                       </TableCell>
                       <TableCell className="text-muted-foreground">
                         <ul className="list-disc list-inside space-y-1 text-sm">
-                          <li>Received two interview feedback; interviewees explained strengths and areas of improvement</li>
-                          <li>Documented feedback to showcase growth for future interview opportunities</li>
+                          <li>Received feedback from two interviews; interviewees highlighted strengths and areas for improvement</li>
+                          <li>Documented feedback to demonstrate growth for future interview opportunities</li>
                         </ul>
                       </TableCell>
                       <TableCell>
@@ -323,9 +323,9 @@ const ClosureDocument = () => {
                     <TableRow>
                       <TableCell className="font-medium">1</TableCell>
                       <TableCell className="text-muted-foreground">Week 9 (2025-10-19)</TableCell>
-                      <TableCell className="text-muted-foreground">Changed scope from CIS focus to Business Focus</TableCell>
+                      <TableCell className="text-muted-foreground">Changed scope from CIS focus to business focus</TableCell>
                       <TableCell className="text-muted-foreground">
-                        When conducting my usual job searching, I noticed that some of the technology focus positions fall under business operations, such as business analyst, sales operations, and marketing/social media marketing. This allowed me to expand my opportunities when choosing potential job positions.
+                        While conducting my usual job search, I noticed that some technology-focused positions fall under business operations, such as business analyst, sales operations, and marketing/social media marketing roles. This realization allowed me to expand my opportunities when selecting potential positions.
                       </TableCell>
                     </TableRow>
                   </TableBody>
@@ -352,7 +352,7 @@ const ClosureDocument = () => {
                     Budget Performance
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Despite being a student and most services and tools being provided for free, either fully (ChatGPT) or with limited access (Monday.com), unexpected costs arose for a tool during the project's closure phase. I found myself during week 12 needing to pay <span className="font-semibold text-indigo-500">$25</span> for an AI model to create my closure website. The AI model, called Lovable, was worth the cost because it excels at making applications and websites. Since I've taken Web Design and Development, I've been able to implement my knowledge in UX/UI design, all for the cost of $25. Other than this, no unexpected costs for tools, hosting, or any resources appeared.
+                    Despite being a student with most services and tools provided for free—either fully (ChatGPT) or with limited access (Monday.com)—unexpected costs arose during the project's closure phase. In week 12, I needed to pay <span className="font-semibold text-indigo-500">$25</span> for an AI tool to create my closure website. The tool, called Lovable, was worth the investment because it excels at building applications and websites. Having taken Web Design and Development, I was able to apply my UX/UI design knowledge effectively—all for just $25. Beyond this, no other unexpected costs for tools, hosting, or resources occurred.
                   </p>
                 </div>
                 
@@ -362,10 +362,10 @@ const ClosureDocument = () => {
                     Schedule Performance
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    To a moderate extent, I did meet my milestones throughout my project timeline. Initially, I started rough but managed to pick up the pace quickly. However, in the middle of my execution, I found myself delaying key deliverable milestones that were approaching, needing to change deadlines to give me ample time to complete them. While smart to do, I ended up doing more work than planned to the point where some of the key milestones were done with poor quality, such as job requirement analysis and scheduling stakeholder feedback, or didn't initiate, such as cover letter creation due to focusing on resumes and other milestones (e.g., interviewing).
+                    To a moderate extent, I met my milestones throughout the project timeline. Initially, I had a rough start but managed to pick up the pace quickly. However, midway through execution, I found myself delaying key deliverable milestones, needing to adjust deadlines to allow adequate time for completion. While this was a sensible approach, I ended up with more work than planned, resulting in some milestones being completed with poor quality—such as job requirement analysis and stakeholder feedback scheduling—while others, like cover letter creation, were never initiated due to my focus on resumes and interviews.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mt-3">
-                    The reasoning for the delays was a lack of confidence and motivation, as well as concentrating on different courses and limited job opportunities, despite broadening my scope. Although there were delays, I believe that my time estimates were realistic throughout this project, except for my own lack of motivation, which prevented some key milestones from being completed within the expected timeframe of 2-4 days with excellent quality.
+                    The delays were caused by a lack of confidence and motivation, competing coursework demands, and limited job opportunities despite broadening my scope. Although there were delays, I believe my time estimates were generally realistic. My lack of motivation was the primary factor preventing some key milestones from being completed within the expected 2–4 day timeframe with excellent quality.
                   </p>
                 </div>
               </div>
@@ -385,10 +385,10 @@ const ClosureDocument = () => {
               
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  My communication skills at the start of the semester were weak, and to some extent, they remain a weakness of mine; however, they have improved thanks to this semester-long personal project. Initially, engaging with stakeholders was challenging due to nerves and judgment, which is why my initial communication with stakeholders was limited to professors, peers, and friends I had known from prior semesters.
+                  At the start of the semester, my communication skills were weak, and to some extent, they remain an area for growth. However, they have improved significantly thanks to this semester-long personal project. Initially, engaging with stakeholders was challenging due to nervousness and fear of judgment, which is why my early communications were limited to professors, peers, and friends I had known from prior semesters.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  However, over time, I met new people, both through force (e.g., group projects) and on my own time (reaching out on LinkedIn). Now, I'm more comfortable reaching out to new stakeholders on my own, with minimal or no nerves and fear of judgment. The reason being that I managed to approach each stakeholder with a direct, personal tone, stating, <span className="italic">"I'm doing a personal project, may you please review it and provide feedback. Feel free to ask me for any clarification you may need."</span>
+                  Over time, I connected with new people—both through necessity (e.g., group projects) and on my own initiative (reaching out on LinkedIn). Now, I feel more comfortable approaching new stakeholders independently, with minimal nervousness and less fear of judgment. This growth came from learning to approach each stakeholder with a direct, personal tone: <span className="italic">"I'm working on a personal project. Would you please review it and provide feedback? Feel free to ask for any clarification you may need."</span>
                 </p>
                 <div className="p-4 bg-indigo-500/10 rounded-lg border border-indigo-500/20">
                   <h4 className="font-semibold text-indigo-500 mb-2">Most Valuable Feedback</h4>
@@ -413,20 +413,20 @@ const ClosureDocument = () => {
               
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  The main issue throughout my project execution was delays in key milestones, which were initially a planned risk before the execution phase; however, it didn't take long before that risk turned into an issue that I needed to address quickly.
+                  The primary challenge throughout my project execution was delays in key milestones. While this was initially identified as a planned risk before the execution phase, it quickly materialized into an issue that required immediate attention.
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="p-4 bg-red-500/10 rounded-lg border border-red-500/20">
-                    <h4 className="font-semibold text-red-500 mb-2">Weeks 6-7: Health Issues</h4>
+                    <h4 className="font-semibold text-red-500 mb-2">Weeks 6–7: Health Issues</h4>
                     <p className="text-muted-foreground text-sm">
-                      A sudden health issue arose, and I needed to prioritize my health over academic work. With workload piling up, many early deliverable tasks were delayed or conducted with poor quality. By week 8, I had improved at managing deadlines while focusing on my health.
+                      A sudden health issue arose, requiring me to prioritize my well-being over academic work. As workload accumulated, many early deliverable tasks were delayed or completed with poor quality. By week 8, I had improved at managing deadlines while still focusing on my health.
                     </p>
                   </div>
                   <div className="p-4 bg-amber-500/10 rounded-lg border border-amber-500/20">
-                    <h4 className="font-semibold text-amber-600 mb-2">Weeks 9-11: Limited Opportunities</h4>
+                    <h4 className="font-semibold text-amber-600 mb-2">Weeks 9–11: Limited Opportunities</h4>
                     <p className="text-muted-foreground text-sm">
-                      Realized there were hardly any job opportunities to apply to, with one position being reasonable every couple of days. Expanded scope from CIS to business focus, but still needed to adjust deadlines and shift priority focus in week 12.
+                      I realized there were very few job opportunities to apply for, with only one reasonable position appearing every few days. I expanded my scope from CIS to business-focused roles but still needed to adjust deadlines and shift priority focus by week 12.
                     </p>
                   </div>
                 </div>
@@ -434,7 +434,7 @@ const ClosureDocument = () => {
                 <div className="p-4 bg-secondary/30 rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Moving Forward</h4>
                   <p className="text-muted-foreground text-sm">
-                    I will focus on and monitor potential risks for future projects, as deadlines were significantly altered throughout my execution due to these risks becoming issues. Despite being mainly a solo project, communication is key when you need feedback or for sudden incidents that occur and disrupt your project progress.
+                    For future projects, I will focus on monitoring potential risks more closely, as deadlines were significantly altered throughout this project when risks became issues. Despite this being primarily a solo project, I learned that communication remains essential—both for obtaining feedback and for addressing sudden incidents that disrupt progress.
                   </p>
                 </div>
               </div>
@@ -456,7 +456,7 @@ const ClosureDocument = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-emerald-500 mt-0.5 shrink-0" />
                   <p className="text-muted-foreground">
-                    <span className="font-semibold text-foreground">Team Communication:</span> Following up with my team to keep everyone on track went well, as I communicated with each member regarding any issues or deadlines, whether related to the course or personal matters. I ensured teammates were up to date on their project progress.
+                    <span className="font-semibold text-foreground">Team Communication:</span> Following up with my team to keep everyone on track went well. I communicated with each member about issues and deadlines, whether course-related or personal, and ensured teammates stayed updated on their project progress.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
@@ -468,7 +468,7 @@ const ClosureDocument = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-emerald-500 mt-0.5 shrink-0" />
                   <p className="text-muted-foreground">
-                    <span className="font-semibold text-foreground">Stakeholder Feedback:</span> Stakeholder feedback enabled me not only to improve my project execution but also to boost my personal confidence level, as many of the stakeholders I reached out to showed support for my accomplishments, even if they were small. Some motivated me to expand my social circles.
+                    <span className="font-semibold text-foreground">Stakeholder Feedback:</span> Stakeholder feedback not only helped improve my project execution but also boosted my confidence. Many stakeholders I reached out to expressed support for my accomplishments, even the small ones, and some encouraged me to expand my social circles.
                   </p>
                 </div>
               </div>
@@ -490,7 +490,7 @@ const ClosureDocument = () => {
                 <div className="flex items-start gap-3">
                   <XCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
                   <p className="text-muted-foreground">
-                    <span className="font-semibold text-foreground">Work-Life Balance:</span> Balancing coursework with project execution was the main issue. Maintaining deadlines was a struggle. During the execution phase, numerous deadlines were adjusted, despite employing a hybrid approach and preparing in advance for potential deadline issues.
+                    <span className="font-semibold text-foreground">Work-Life Balance:</span> Balancing coursework with project execution was the main challenge. Maintaining deadlines proved difficult, and during the execution phase, numerous deadlines were adjusted despite employing a hybrid approach and preparing in advance for potential issues.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
@@ -502,7 +502,7 @@ const ClosureDocument = () => {
                 <div className="flex items-start gap-3">
                   <XCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
                   <p className="text-muted-foreground">
-                    <span className="font-semibold text-foreground">Poor Documentation:</span> Documentation of deliverables and their execution was poor. Completing all deliverables and their tasks wasn't my priority. An unreasonable shift in priority, caused by missed deadlines, lack of motivation, and other issues, was the reason for poor quality deliverables.
+                    <span className="font-semibold text-foreground">Poor Documentation:</span> Documentation of deliverables and their execution was insufficient. Completing all deliverables and associated tasks was not always my priority. An unreasonable shift in focus—caused by missed deadlines, lack of motivation, and other issues—resulted in poor-quality deliverables.
                   </p>
                 </div>
               </div>
@@ -524,19 +524,19 @@ const ClosureDocument = () => {
                 <div className="p-4 bg-secondary/30 rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Initiation & Planning Phase</h4>
                   <p className="text-muted-foreground text-sm">
-                    Communicate with the stakeholder(s) who provided me with the information about the project (in this case, the professor) to clarify the scope, business needs and values, and other crucial execution details. Communicate with teammates about the project's objective and understand what needs to be done during future phases.
+                    I would communicate more thoroughly with the stakeholder(s) who provided project information (in this case, the professor) to clarify the scope, business needs, values, and other crucial execution details. I would also communicate with teammates about the project's objectives and ensure everyone understands what needs to be accomplished in future phases.
                   </p>
                 </div>
                 <div className="p-4 bg-secondary/30 rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Execution & Monitoring Phase</h4>
                   <p className="text-muted-foreground text-sm">
-                    Monitor risks and issues more frequently and set reasonable deadlines for deliverables and their associated tasks. Update teammates and stakeholders about problems so they have a clear understanding of why the execution and monitoring didn't go as planned.
+                    I would monitor risks and issues more frequently and set reasonable deadlines for deliverables and associated tasks. I would also update teammates and stakeholders about problems promptly so they clearly understand why execution and monitoring did not proceed as planned.
                   </p>
                 </div>
                 <div className="p-4 bg-indigo-500/10 rounded-lg border border-indigo-500/20">
                   <h4 className="font-semibold text-indigo-500 mb-2">Project-Specific Improvement</h4>
                   <p className="text-muted-foreground text-sm">
-                    I would have expanded and focused on other job listing sites such as Indeed, Glassdoor, and LinkedIn for job positions and internships, rather than solely focusing on Handshake. I may have missed out on opportunities that were in my favor based on my experiences and academic achievements.
+                    I would have expanded my search to include other job listing sites such as Indeed, Glassdoor, and LinkedIn for positions and internships, rather than focusing solely on Handshake. By limiting my search, I may have missed opportunities that aligned well with my experiences and academic achievements.
                   </p>
                 </div>
               </div>
@@ -576,30 +576,30 @@ const ClosureDocument = () => {
                     <TableRow>
                       <TableCell className="text-muted-foreground text-sm">Week 6 (Sep 27)</TableCell>
                       <TableCell><Badge variant="outline">Execution</Badge></TableCell>
-                      <TableCell className="text-muted-foreground text-sm">Health related issues arose; needed to focus on myself</TableCell>
-                      <TableCell className="text-muted-foreground text-sm">Deadlines were changed heavily; future processes done in poor quality</TableCell>
-                      <TableCell className="text-muted-foreground text-sm">Allow time for myself; communicate with stakeholders regarding delays</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">Health-related issues arose; needed to focus on myself</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">Deadlines were significantly adjusted; subsequent tasks completed with poor quality</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">Allow time for personal well-being; communicate with stakeholders regarding delays</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className="text-muted-foreground text-sm">Week 9</TableCell>
                       <TableCell><Badge variant="outline">Execution</Badge></TableCell>
                       <TableCell className="text-muted-foreground text-sm">Lack of job/internship opportunities</TableCell>
-                      <TableCell className="text-muted-foreground text-sm">Delayed deadlines regarding stakeholder communications; loss in potential opportunities</TableCell>
-                      <TableCell className="text-muted-foreground text-sm">Strengthen initiation and planning phase; expect and prepare for scope changes</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">Delayed stakeholder communication deadlines; lost potential opportunities</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">Strengthen initiation and planning phases; expect and prepare for scope changes</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className="text-muted-foreground text-sm">Week 11</TableCell>
                       <TableCell><Badge variant="outline">Monitoring</Badge></TableCell>
-                      <TableCell className="text-muted-foreground text-sm">Lack of documentation despite execution was on track</TableCell>
-                      <TableCell className="text-muted-foreground text-sm">Unprepared when stakeholders asked about progress; lack of evidence of completion</TableCell>
-                      <TableCell className="text-muted-foreground text-sm">Document when execution phase initiates</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">Lack of documentation despite execution being on track</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">Unprepared when stakeholders asked about progress; lacked evidence of completion</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">Document progress as soon as the execution phase begins</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className="text-muted-foreground text-sm">Week 13</TableCell>
                       <TableCell><Badge variant="outline">Closing</Badge></TableCell>
-                      <TableCell className="text-muted-foreground text-sm">Stakeholder interview deadlines approaching; changing wasn't an option</TableCell>
-                      <TableCell className="text-muted-foreground text-sm">Preventable stress occurred; communication with stakeholders was difficult</TableCell>
-                      <TableCell className="text-muted-foreground text-sm">Remind about upcoming deadlines; prioritize deliverables early; keep calm under pressure</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">Stakeholder interview deadlines approaching; changing them was not an option</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">Preventable stress occurred; stakeholder communication became difficult</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">Set reminders for upcoming deadlines; prioritize deliverables early; remain calm under pressure</TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -622,7 +622,7 @@ const ClosureDocument = () => {
                 <div className="flex items-start gap-3 p-4 bg-gradient-to-r from-indigo-500/10 to-violet-500/10 rounded-lg border border-indigo-500/20">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-primary-foreground font-bold text-sm shrink-0">1</span>
                   <p className="text-foreground">
-                    <span className="font-semibold">Analyze and communicate about project needs and requirements early on.</span> Communicate with stakeholders about the project's goals, needs, values, scope, and other relevant information during initialization and planning phases.
+                    <span className="font-semibold">Analyze and communicate project needs and requirements early.</span> Engage with stakeholders about the project's goals, needs, values, scope, and other relevant information during the initiation and planning phases.
                   </p>
                 </div>
                 <div className="flex items-start gap-3 p-4 bg-gradient-to-r from-indigo-500/10 to-violet-500/10 rounded-lg border border-indigo-500/20">
@@ -634,7 +634,7 @@ const ClosureDocument = () => {
                 <div className="flex items-start gap-3 p-4 bg-gradient-to-r from-indigo-500/10 to-violet-500/10 rounded-lg border border-indigo-500/20">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-primary-foreground font-bold text-sm shrink-0">3</span>
                   <p className="text-foreground">
-                    <span className="font-semibold">Communicate with team and stakeholders for guidance.</span> Communicating should have been my priority in explaining why progress and processes of deliverables were not smooth.
+                    <span className="font-semibold">Communicate with the team and stakeholders for guidance.</span> Communication should have been my priority when explaining why progress and deliverable processes were not running smoothly.
                   </p>
                 </div>
                 <div className="flex items-start gap-3 p-4 bg-gradient-to-r from-indigo-500/10 to-violet-500/10 rounded-lg border border-indigo-500/20">
@@ -674,7 +674,7 @@ const ClosureDocument = () => {
                     <Badge className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">December 6, 2025</Badge>
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    I spoke with my team about the outcomes of my project, my deliverables, and the processes of these deliverables through smaller tasks. My team expressed support for the results of my project. It acknowledged the difficulty of the job hunting process, especially in terms of the lack of internship positions available that fit our needs and values. They valued my personal goals of finding an internship to achieve my mission and vision. They encouraged me to continue searching for and applying to positions, letting this project serve as a stepping stone for future job hunts.
+                    I spoke with my team about the outcomes of my project, my deliverables, and how these deliverables were accomplished through smaller tasks. My team expressed support for my results and acknowledged the difficulty of the job hunting process, especially given the lack of internship positions that fit our needs and values. They appreciated my personal goals of finding an internship to achieve my mission and vision, and encouraged me to continue searching and applying for positions—viewing this project as a stepping stone for future job searches.
                   </p>
                 </div>
                 
@@ -686,7 +686,7 @@ const ClosureDocument = () => {
                   </div>
                   <p className="text-sm text-muted-foreground mb-2">Keiley Anaya, Roshan Roy Suja, and Juan Manuel Toledo</p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    Each interviewee agreed that I could've made more progress on my deliverables, especially regarding personal issues such as my fear of rejection. However, they mentioned that the project idea was great for me to choose, as it aligns with my personal goals and values. Keiley added that I was honest throughout my project, especially in discussing the issues I faced. Juan appreciated the outcome of my network portfolio and interview, mentioning that I demonstrated professionalism and knowledge, adding that I may already possess strong communication and interviewing skills.
+                    Each interviewee acknowledged that I could have made more progress on my deliverables, particularly regarding personal challenges such as my fear of rejection. However, they agreed that the project topic was an excellent choice, as it aligns with my personal goals and values. Keiley noted that I was honest throughout my project, especially when discussing the issues I faced. Juan appreciated the outcome of my network portfolio and interview, observing that I demonstrated professionalism and knowledge, and suggested that I may already possess strong communication and interviewing skills.
                   </p>
                 </div>
               </div>
@@ -717,7 +717,7 @@ const ClosureDocument = () => {
                   <h4 className="font-semibold text-foreground mb-2">Professors</h4>
                   <p className="text-sm text-indigo-500 mb-3">Arun Aryal, Daniel Razmjou, Maria Espinoza</p>
                   <p className="text-muted-foreground text-sm">
-                    Each professor provided interest and offered guidance regarding my project and the job process. Daniel provided resources regarding certifications, enabling me to pass an entry-level certification. Maria provided insight on stakeholder relationships and confidence when applying.
+                    Each professor showed interest in my work and offered valuable guidance regarding my project and the job search process. Daniel provided resources on certifications, enabling me to pass an entry-level certification. Maria offered insights on stakeholder relationships and building confidence when applying for positions.
                   </p>
                 </div>
                 
@@ -725,7 +725,7 @@ const ClosureDocument = () => {
                   <h4 className="font-semibold text-foreground mb-2">Interviewees</h4>
                   <p className="text-sm text-indigo-500 mb-3">Keiley Anaya, Roshan Roy Suja, Juan Manuel Toledo</p>
                   <p className="text-muted-foreground text-sm">
-                    These peers all celebrated small accomplishments that I had previously overlooked. They allowed me to display professionalism and test my understanding of my project, and I'm thankful for choosing them as stakeholders.
+                    These peers celebrated small accomplishments that I had previously overlooked. They gave me the opportunity to demonstrate professionalism and test my understanding of my project. I am grateful for having chosen them as stakeholders.
                   </p>
                 </div>
               </div>
@@ -745,14 +745,14 @@ const ClosureDocument = () => {
               
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Besides focusing on finishing strong in my last semester at CSULA, I will immediately communicate with stakeholders and potential teammates regarding project idea validation, project goals, and the processes that need to be conducted to complete the project thoroughly from the lead stakeholder's perspective.
+                  Beyond focusing on finishing strong in my final semester at CSULA, I will prioritize early communication with stakeholders and potential teammates regarding project idea validation, goals, and the processes needed to complete projects thoroughly from the lead stakeholder's perspective.
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3">
                     <ArrowRight className="h-5 w-5 text-indigo-500 mt-0.5 shrink-0" />
                     <p className="text-muted-foreground text-sm">
-                      <span className="font-semibold text-foreground">Review Lessons Learned:</span> Analyze the issues regarding the cause, outcomes, and whether the problem was preventable (if so, how would my team or I have addressed it?).
+                      <span className="font-semibold text-foreground">Review Lessons Learned:</span> Analyze issues by examining their causes, outcomes, and whether they were preventable—and if so, how my team or I could have addressed them.
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
@@ -764,13 +764,13 @@ const ClosureDocument = () => {
                   <div className="flex items-start gap-3">
                     <ArrowRight className="h-5 w-5 text-indigo-500 mt-0.5 shrink-0" />
                     <p className="text-muted-foreground text-sm">
-                      <span className="font-semibold text-foreground">Improve Stakeholder Feedback:</span> Improve my communication with stakeholders regarding project feedback and critiques, scheduling interviews early rather than towards the end.
+                      <span className="font-semibold text-foreground">Improve Stakeholder Feedback:</span> Enhance my communication with stakeholders regarding project feedback and critiques by scheduling interviews early rather than toward the end.
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <ArrowRight className="h-5 w-5 text-indigo-500 mt-0.5 shrink-0" />
                     <p className="text-muted-foreground text-sm">
-                      <span className="font-semibold text-foreground">Priority Focus:</span> Stakeholder communication and project goals are the priorities that enable me to perform well throughout the project timeline.
+                      <span className="font-semibold text-foreground">Priority Focus:</span> Stakeholder communication and clear project goals are the key priorities that will enable me to perform well throughout any project timeline.
                     </p>
                   </div>
                 </div>
