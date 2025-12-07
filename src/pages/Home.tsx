@@ -71,15 +71,12 @@ const Home = () => {
       <main className="container mx-auto px-6 py-xl">
         <div className="max-w-5xl mx-auto space-y-lg">
           {/* Hero Section */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-purple-500 via-teal-400 to-sky-400 bg-[length:400%_100%] animate-gradient-shift shadow-elegant animate-fade-in group">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-purple-500 via-teal-400 to-sky-400 bg-[length:300%_100%] animate-gradient-shift shadow-elegant animate-fade-in group">
             <div className="absolute inset-0 bg-grid-white/5" />
             <div className="absolute inset-0 bg-gradient-accent opacity-30" />
-            {/* Animated shimmer overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent bg-[length:200%_100%] animate-shimmer" />
-            {/* Floating orbs with float animation */}
-            <div className="absolute top-10 right-20 w-32 h-32 bg-white/15 rounded-full blur-2xl animate-float" />
-            <div className="absolute bottom-10 left-20 w-40 h-40 bg-white/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
-            <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-white/5 rounded-full blur-xl animate-float" style={{ animationDelay: "0.75s" }} />
+            {/* Floating orbs */}
+            <div className="absolute top-10 right-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse" />
+            <div className="absolute bottom-10 left-20 w-40 h-40 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
             <div className="relative p-lg md:p-xl">
               <div className="flex items-start justify-between mb-8">
                 <div className="space-y-3">
@@ -155,27 +152,23 @@ const Home = () => {
                   style={{ animationDelay: `${0.2 + index * 0.1}s` }}
                 >
                   <Card
-                    className={`p-6 h-full transition-all duration-500 animate-fade-in relative overflow-hidden ${
+                    className={`p-6 h-full transition-all duration-300 animate-fade-in relative overflow-hidden ${
                       link.available
-                        ? `bg-glass backdrop-blur-md border-glass shadow-glass hover:-translate-y-3 hover:shadow-elegant cursor-pointer border-l-4 ${link.borderColor} group hover:border-glass`
+                        ? `bg-glass backdrop-blur-md border-glass shadow-glass hover:-translate-y-2 hover:shadow-elegant cursor-pointer border-l-4 ${link.borderColor} group`
                         : "opacity-60 border-l-4 border-l-muted bg-card/50 backdrop-blur-sm"
                     }`}
                   >
-                    {/* Background glow effect on hover */}
-                    <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${link.accentColor} rounded-full blur-3xl transition-all duration-500 ${link.available ? 'group-hover:opacity-60 group-hover:scale-150' : 'opacity-20'}`} />
-                    <div className={`absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr ${link.accentColor} rounded-full blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-500`} />
-                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    {/* Shimmer effect on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent bg-[length:200%_100%] opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity" />
+                    <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${link.accentColor} rounded-full blur-3xl ${link.available ? 'group-hover:opacity-40' : 'opacity-20'} transition-opacity`} />
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative flex items-start gap-4">
                       <div
-                        className={`p-4 rounded-xl transition-all duration-500 ${
+                        className={`p-4 rounded-xl transition-all duration-300 ${
                           link.available
-                            ? `bg-gradient-to-br ${link.iconGradient} text-primary-foreground shadow-md group-hover:shadow-elegant group-hover:scale-110 group-hover:rotate-3 group-hover:animate-glow-pulse`
+                            ? `bg-gradient-to-br ${link.iconGradient} text-primary-foreground shadow-md group-hover:shadow-elegant group-hover:scale-110`
                             : "bg-muted/50 backdrop-blur-sm text-muted-foreground"
                         }`}
                       >
-                        <link.icon className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" />
+                        <link.icon className="h-7 w-7" />
                       </div>
                       <div className="flex-1 space-y-2">
                         <div className="flex items-start justify-between gap-2">
