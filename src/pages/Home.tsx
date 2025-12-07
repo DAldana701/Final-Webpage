@@ -72,11 +72,15 @@ const Home = () => {
         <div className="max-w-5xl mx-auto space-y-lg">
           {/* Hero Section */}
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-sky-500 via-cyan-500 via-teal-500 via-emerald-500 via-amber-500 via-pink-500 to-violet-500 bg-[length:800%_100%] animate-gradient-shift-slower shadow-elegant animate-fade-in group">
+            {/* Glossy overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-white/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20 pointer-events-none" />
+            <div className="absolute inset-x-0 top-0 h-px bg-white/40" />
             <div className="absolute inset-0 bg-grid-white/5" />
-            <div className="absolute inset-0 bg-gradient-accent opacity-30" />
+            <div className="absolute inset-0 bg-gradient-accent opacity-20" />
             {/* Floating orbs */}
-            <div className="absolute top-10 right-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse" />
-            <div className="absolute bottom-10 left-20 w-40 h-40 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
+            <div className="absolute top-10 right-20 w-32 h-32 bg-white/15 rounded-full blur-2xl animate-pulse" />
+            <div className="absolute bottom-10 left-20 w-40 h-40 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
             <div className="relative p-lg md:p-xl">
               <div className="flex items-start justify-between mb-8">
                 <div className="space-y-3">
