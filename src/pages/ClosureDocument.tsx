@@ -673,6 +673,7 @@ const ClosureDocument = () => {
                     <h4 className="font-semibold text-foreground">Tech Owls Team Sign-Off</h4>
                     <Badge className="bg-emerald-500/10 text-emerald-600 border-emerald-500/20 ml-auto">December 6, 2025</Badge>
                   </div>
+                  <p className="text-sm text-muted-foreground mb-2">Fatima Zahra Anammi, Abner Bonilla, Angel Contreras, and Berenice Fuentes</p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     I spoke with my team about the outcomes of my project, my deliverables, and how these deliverables were accomplished through smaller tasks. My team expressed support for my results and acknowledged the difficulty of the job hunting process, especially given the lack of internship positions that fit our needs and values. They appreciated my personal goals of finding an internship to achieve my mission and vision, and encouraged me to continue searching and applying for positions—viewing this project as a stepping stone for future job searches.
                   </p>
