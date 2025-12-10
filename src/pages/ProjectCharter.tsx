@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Target, Briefcase, Layers, Users, Package, DollarSign, Wrench, Hammer, CheckCircle2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { PageTransition } from "@/components/PageTransition";
+import projectPlanDiagram from "@/assets/ProjectPlanDiagram.png";
 
 const ProjectCharter = () => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -716,6 +717,21 @@ const ProjectCharter = () => {
                   <p className="text-foreground/90 leading-relaxed">
                     This approach provides both <strong>structure</strong> and <strong>adaptability</strong>, supporting steady progress while integrating insights from professors, counselors, and other stakeholders. It mirrors professional project management practices that balance defined goals with responsive, real-world learning.
                   </p>
+                </div>
+
+                {/* Project Methodology Diagram */}
+                <div className="bg-card border border-border/40 rounded-lg p-6 hover:shadow-md transition-shadow">
+                  <h4 className="text-lg font-semibold text-primary mb-4">Project Timeline Diagram</h4>
+                  <p className="text-foreground/90 leading-relaxed mb-4">
+                    The following diagram illustrates the project phases across the semester, showing how tasks flow through <strong>Initialization & Planning</strong>, <strong>Execution</strong>, <strong>Execution & Monitoring</strong>, and <strong>Finalizing, Closing, & Deliver</strong>.
+                  </p>
+                  <div className="bg-background/50 rounded-lg p-4 border border-border/30">
+                    <img 
+                      src={projectPlanDiagram} 
+                      alt="Project Methodology Timeline Diagram showing phases from Week 2 to Final Week" 
+                      className="w-full h-auto rounded-lg shadow-sm"
+                    />
+                  </div>
                 </div>
               </CardContent>
             </Card>
