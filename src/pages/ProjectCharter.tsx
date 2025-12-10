@@ -734,6 +734,9 @@ const ProjectCharter = () => {
                       className="w-full h-auto rounded-lg shadow-sm"
                     />
                   </div>
+                  <p className="text-xs text-muted-foreground mt-3 italic">
+                    <strong>Note:</strong> The ISC2 CC (Certified in Cybersecurity) preparation shown in the diagram is an optional deliverable and not part of the four main project deliverables outlined in the Deliverables section.
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -810,6 +813,9 @@ const ProjectCharter = () => {
                       />
                     </div>
                   </div>
+                  <p className="text-xs text-muted-foreground mt-3 italic">
+                    <strong>Note:</strong> The ISC2 CC Preparation tasks visible in the board are optional milestones and not part of the four main project deliverables.
+                  </p>
                 </div>
               </CardContent>
             </Card>
