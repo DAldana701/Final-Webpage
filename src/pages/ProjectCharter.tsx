@@ -4,6 +4,8 @@ import { FileText, Target, Briefcase, Layers, Users, Package, DollarSign, Wrench
 import { useState, useEffect } from "react";
 import { PageTransition } from "@/components/PageTransition";
 import projectPlanDiagram from "@/assets/ProjectPlanDiagram.png";
+import projectTool1 from "@/assets/ProjectTool1.png";
+import projectTool2 from "@/assets/ProjectTool2.png";
 
 const ProjectCharter = () => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -782,6 +784,32 @@ const ProjectCharter = () => {
                   <p className="text-foreground/90 leading-relaxed mt-4">
                     Once configured, Monday.com provided a cohesive environment for managing progress, maintaining accountability, and visualizing outcomes.
                   </p>
+                </div>
+
+                {/* Monday.com Screenshots */}
+                <div className="bg-card border border-border/40 rounded-lg p-6 hover:shadow-md transition-shadow">
+                  <h4 className="text-lg font-semibold text-primary mb-4">Monday.com Project Board</h4>
+                  <p className="text-foreground/90 leading-relaxed mb-4">
+                    The following screenshots showcase the actual Monday.com workspace used for this project, demonstrating task organization, timelines, and priority management.
+                  </p>
+                  <div className="space-y-6">
+                    <div className="bg-background/50 rounded-lg p-4 border border-border/30">
+                      <p className="text-sm text-muted-foreground mb-3 font-medium">Task Board View - Semester Tasks & ISC2 CC Preparation</p>
+                      <img 
+                        src={projectTool1} 
+                        alt="Monday.com project board showing Overall Semester-Long Tasks and ISC2 CC Preparation with priorities, timelines, and status" 
+                        className="w-full h-auto rounded-lg shadow-sm"
+                      />
+                    </div>
+                    <div className="bg-background/50 rounded-lg p-4 border border-border/30">
+                      <p className="text-sm text-muted-foreground mb-3 font-medium">Task Board View - Resume Preparation & Construction</p>
+                      <img 
+                        src={projectTool2} 
+                        alt="Monday.com project board showing Resume Preparation and Resume Construction Process with dependencies and timelines" 
+                        className="w-full h-auto rounded-lg shadow-sm"
+                      />
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
