@@ -117,7 +117,7 @@ const Home = () => {
                     <div className="space-y-2">
                       <div>
                         <p className="text-xs text-muted-foreground">Title</p>
-                        <p className="text-lg font-semibold text-foreground">Business-Align Job Hunt</p>
+                        <p className="text-lg font-semibold text-foreground">Business-Aligned Job Hunt</p>
                       </div>
                       <div>
                         <p className="text-xs text-muted-foreground">Objective</p>
